@@ -1,2 +1,12 @@
-# landing-page-anna-golubovska
-A responsive landing page for Anna Golubovska to showcase her services. Built with HTML, SCSS, and JavaScript, it includes sections for services, testimonials, and a contact form. Optimized for fast loading and smooth navigation across devices, providing a clean and user-friendly experience.
+# Landing Page для Anna Golubovska
+
+This project is a landing page to promote the personal services of client Anna Golubovska. The website is responsive and built using HTML, CSS, SCSS, and JavaScript technologies.
+
+## Technologies:
+
+HTML, CSS (SCSS), JavaScript.
+
+Responsive design and integration with WayForPay, Google Pay, Apple Pay, and PayPal.
+
+### Author: Andrii Yakovliev
+[UpWork](https://www.upwork.com/freelancers/~01a75a9a5d09ef15a6)
