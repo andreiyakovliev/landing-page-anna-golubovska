@@ -85,7 +85,7 @@ h6 {
   font-size: inherit
 }
 body {
-  background-color: #f1f5f9
+  background-color: beige
 }
 .lock body {
   overflow: hidden;
@@ -126,8 +126,7 @@ body {
   grid-column: 3/4
 }
 .menu {
-  position: relative;
-  color: #fff
+  position: relative
 }
 .menu__body {
   display: flex;
@@ -152,8 +151,8 @@ body {
   transform: translateY(0);
   pointer-events: auto;
   border-top: transparent;
-  background-color: #475569;
-  text-align: left
+  background-color: beige;
+  border: 2px solid #eaeaea
 }
 .menu__item .submenu {
   display: flex;
@@ -161,8 +160,9 @@ body {
   align-items: center;
   position: absolute;
   top: 100%;
+  border-radius: 0 0 16px 16px;
   left: 0;
-  width: 130%;
+  width: 200%;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
@@ -189,7 +189,7 @@ body {
   left: 0;
   right: 0;
   bottom: -12px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #2c2c2c;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   z-index: 1;
@@ -200,7 +200,7 @@ body {
 .menu__link svg {
   width: 14px;
   height: 14px;
-  fill: #fff;
+  fill: #2c2c2c;
   transition: all .48s cubic-bezier(.23,1,.32,1)
 }
 .submenu .submenu__item {
@@ -212,10 +212,10 @@ body {
 }
 .submenu .submenu__link {
   display: block;
-  padding: 12px 0;
+  padding: 12px 24px;
   width: 100%;
   position: relative;
-  text-align: left;
+  text-align: center;
   transition: all .48s cubic-bezier(.23,1,.32,1)
 }
 .submenu .submenu__link::before {
@@ -223,7 +223,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #2c2c2c;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   width: 100%;
@@ -254,9 +254,7 @@ body {
   text-align: left;
   padding: 1.5rem 1rem;
   position: relative;
-  list-style: none;
-  border-top: 1px solid #475569;
-  border-bottom: 1px solid #475569
+  list-style: none
 }
 .faq__spollers-title::-webkit-details-marker,
 .faq__spollers-title::marker {
@@ -328,7 +326,9 @@ body {
   transform: rotate(40deg)
 }
 .faq__spollers-body {
-  padding: 2rem 1rem
+  padding: 2rem 1rem;
+  border-radius: .3125rem;
+  border: 1px solid #eaeaea
 }
 .ibg {
   width: 100%;
@@ -372,8 +372,7 @@ body {
 .text--btn {
   font-weight: 500;
   line-height: 24px;
-  letter-spacing: .5px;
-  color: #2c2c2c
+  letter-spacing: .5px
 }
 .text--header {
   font-weight: 600;
@@ -386,7 +385,7 @@ body {
 .button {
   padding: 12px 28px;
   background-color: #d3e6f5;
-  border: 2px solid #475569;
+  border: 2px solid #eaeaea;
   border-radius: 50px;
   cursor: pointer;
   transition: background-color .3s ease
@@ -398,10 +397,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-column-gap: 5rem;
-  -moz-column-gap: 5rem;
-  column-gap: 5rem;
-  row-gap: 2.5rem
+  gap: 5rem;
+  padding: 1.875rem 1.875rem
 }
 .promo-section:not(:last-child) {
   margin-bottom: 1.25rem
@@ -412,23 +409,7 @@ body {
 .promo-section__content {
   flex: 1 1 50%
 }
-.promo-section__content span {
-  font-weight: 600
-}
-.promo-section__content li:not(:last-child) {
-  margin-bottom: 1rem
-}
-.promo-section__content ul li {
-  display: flex;
-  gap: .3125rem
-}
-.promo-section__content ul li::before {
-  content: "✓"
-}
 .promo-section__title:not(:last-child) {
-  margin-bottom: 2rem
-}
-.promo-section__text p:not(:last-child) {
   margin-bottom: 2rem
 }
 .promo-section__text:not(:last-child) {
@@ -456,21 +437,15 @@ body {
   font-size: 1.75rem
 }
 .header {
-  z-index: 100;
-  background-color: #475569
+  z-index: 100
 }
 .header__container {
   position: relative
 }
-.footer {
-  background-color: #475569;
-  color: #fff;
-  position: relative;
-  padding: 2.5rem 0
-}
 .footer__container {
   display: flex;
-  justify-content: space-between
+  justify-content: space-around;
+  padding: 1.875rem
 }
 .footer__content>*:not(:last-child) {
   margin-bottom: 1.6875rem
@@ -484,15 +459,11 @@ body {
   margin-bottom: 1.5rem
 }
 .footer__menu-body {
-  justify-content: flex-start;
-  align-items: flex-start;
   padding: 0
 }
 .footer__menu-list {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(5,auto);
-  justify-items: flex-start
+  flex-direction: column;
+  align-items: flex-start
 }
 .footer__contact-item:not(:last-child) {
   margin-bottom: 1.6875rem
@@ -501,11 +472,9 @@ body {
   font-weight: 700
 }
 .hero {
-  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: #fff
+  align-items: center
 }
 .hero__container {
   display: flex;
@@ -516,23 +485,10 @@ body {
   padding-bottom: 9.5rem;
   margin-bottom: 2.5rem
 }
-.hero__polygon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #475569;
-  clip-path: polygon(0 0,100% 0,92% 83%,0 100%);
-  z-index: -1
-}
 .hero__content {
   flex: 1 1 50%
 }
 .hero__title:not(:last-child) {
-  margin-bottom: 2rem
-}
-.hero__text:not(:last-child) {
   margin-bottom: 2rem
 }
 .hero__subtitle {
@@ -552,21 +508,8 @@ body {
   max-width: 100%;
   border-radius: 16px
 }
-.about-service {
-  padding: 2.5rem 0
-}
-.test-service {
-  padding: 2.5rem 0
-}
-.advantages-service {
-  padding: 2.5rem 0
-}
-.about-me-service {
-  padding: 2.5rem 0
-}
-.testimonials {
-  background-color: #fff;
-  padding: 2.5rem 0
+.service__container {
+  margin-bottom: 2.5rem
 }
 .testimonials__container {
   display: grid;
@@ -575,7 +518,8 @@ body {
   row-gap: 80px;
   -webkit-column-gap: 32px;
   -moz-column-gap: 32px;
-  column-gap: 32px
+  column-gap: 32px;
+  margin-bottom: 2.5rem
 }
 .testimonials__navigation {
   justify-self: flex-end;
@@ -589,10 +533,6 @@ body {
 .testimonials__article {
   display: grid;
   grid-row: repeat(2,auto);
-  background-color: hsla(0,0%,100%,.8509803922);
-  border-radius: 1rem;
-  box-shadow: 0 0 6px 0 rgba(0,0,0,.07),0 10px 15px -3px rgba(0,0,0,.1);
-  height: 100%;
   padding: 2rem
 }
 .testimonials__article-text:not(:last-child) {
@@ -606,21 +546,20 @@ body {
 .material-symbols-outlined {
   font-size: 2.25rem
 }
-.faq {
-  background-color: #fff;
-  padding: 2.5rem 0
+.faq__container {
+  margin-bottom: 5rem
 }
 .faq__title:not(:last-child) {
   margin-bottom: 5rem
 }
-.action {
-  padding: 2.5rem 0
+.action__container {
+  margin-bottom: 5rem
 }
 .action__title:not(:last-child) {
-  margin-bottom: 2rem
+  margin-bottom: 5rem
 }
-.action__block:nth-child(odd) {
-  flex-direction: column
+.action__block:nth-child(even) {
+  flex-direction: row
 }
 .action__price {
   display: flex;
@@ -631,49 +570,13 @@ body {
 .action__price-card {
   display: inline-block;
   text-align: center;
-  padding: 2.5rem;
-  background-color: #475569;
-  border-radius: 1rem;
-  color: #fff
+  padding: 2.5rem
 }
 .action__price-card-title:not(:last-child) {
   margin-bottom: 2rem
 }
 .action__price-card-price:not(:last-child) {
   margin-bottom: 2rem
-}
-.action__price-card-feature:not(:last-child) {
-  margin-bottom: 1rem
-}
-.colors__container {
-  padding: 2.5rem
-}
-.colors__header:not(:last-child) {
-  margin-bottom: 1.875rem
-}
-.colors__palette {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 1.25rem
-}
-.colors__palette img {
-  max-width: 100%;
-  border: 2px solid #000
-}
-.colors__title:not(:last-child) {
-  margin-bottom: .9375rem
-}
-.components__container {
-  margin-bottom: 40px
-}
-.components__title:not(:last-child) {
-  margin-bottom: 1.875rem
-}
-.components__items:not(:last-child) {
-  margin-bottom: 1.875rem
-}
-.components__header:not(:last-child) {
-  margin-bottom: .9375rem
 }
 .swiper {
   overflow: hidden
