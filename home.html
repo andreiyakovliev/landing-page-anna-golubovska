@@ -6,22 +6,44 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241010184054">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241011131945">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- Google Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&_v=20241010184054" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&_v=20241011131945" />
 	<!-- =============== Flaticon brands =============== -->
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241010184054'>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241011131945'>
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body class="popup-show">
 	<div class="wrapper">
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__block">
+						<h3 class="popup__title title title--block">Оберіть, будь ласка спосіб оплати</h3>
+						<p class="popup__text text">Вартість послуги складає 100$</p>
+						<div class="popup__action">
+							<a href="#" class="button text text--btn">Оплата карткою</a>
+							<a href="#" class="button text text--btn">Google Pay</a>
+							<a href="#" class="button text text--btn">Apple Pay</a>
+							<a href="#" class="button text text--btn">PayPal</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<header class="header header__main">
 			<div class="header__container">
 				<div class="header__menu menu">
-					<button type="button text text--btn" class="menu__icon icon-menu"><span></span></button>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<a href="#" class="header__logo logo"><!-- <img src="img/logo.svg" alt="logo">-->Anna Golubovska</a>
@@ -54,7 +76,7 @@
 							<li class="menu__item text"><a href="#" data-goto=".action" class="menu__link">Вартість</a></li>
 							<li class="menu__item text"><a href="#" data-goto=".footer" class="menu__link">Контакти</a></li>
 						</ul>
-						<a href="#" class="header__button button text text--btn"><span>Пройти тест</span></a>
+						<a href="#" class="header__button button text text--btn" data-popup="#popup"><span>Пройти тест</span></a>
 					</nav>
 
 				</div>
@@ -71,7 +93,7 @@
 						<p class="hero__text text">Пройдіть персоналізований тест на основі ваших індивідуальних обставин та
 							міжнародних конвенцій про уникнення подвійного
 							оподаткування.</p>
-						<a href="#" class="hero__button button text text--btn">Пройти тест</a>
+						<a href="#" class="hero__button button text text--btn" data-popup="#popup">Пройти тест</a>
 					</div>
 					<div class="hero__media">
 						<img src="img/photo_and_images/05.webp" alt="Anna Golubovska">
@@ -136,7 +158,7 @@
 										за додатковою консультацією.</p>
 								</li>
 							</ol>
-							<a href="#" class="promo-section__button button text text--btn">Заповнити анкету</a>
+							<a href="#" class="promo-section__button button text text--btn" data-popup="#popup">Заповнити анкету</a>
 						</div>
 						<div class="promo-section__media">
 							<img src="img/photo_and_images/02.webp" alt="Taxes">
@@ -193,10 +215,10 @@
 				<div class="testimonials__container">
 					<h2 class="testimonials__title title title--block">Відгуки</h2>
 					<div class="testimonials__navigation">
-						<button type="button text text--btn" class="testimonials-button-prev"><span class="material-symbols-outlined">
+						<button type="button" class="testimonials-button-prev"><span class="material-symbols-outlined">
 								arrow_circle_left
 							</span></button>
-						<button type="button text text--btn" class="testimonials-button-next">
+						<button type="button" class="testimonials-button-next">
 							<span class="material-symbols-outlined">
 								arrow_circle_right
 							</span>
@@ -294,7 +316,7 @@
 									<li>Feature</li>
 									<li>Feature</li>
 								</ul>
-								<a href="#" class="promo-section__button button text text--btn">Пройти тест</a>
+								<a href="#" class="promo-section__button button text text--btn" data-popup="#popup">Пройти тест</a>
 							</acticle>
 						</div>
 					</div>
@@ -357,7 +379,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241010184054"></script>
+	<script src="js/app.min.js?_v=20241011131945"></script>
 </body>
 
 </html>
