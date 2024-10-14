@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Верстка «Landing Page Anna Golubovska»</title>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241011131945'>
-	<script src="https://kit.fontawesome.com/9eb88b0a3d.js?_v=20241011131945" crossorigin="anonymous"></script>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241014225225'>
+	<script src="https://kit.fontawesome.com/9eb88b0a3d.js?_v=20241014225225" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,11 +33,7 @@
 			</div>
 			<h2>Готові сторінки:</h2>
 			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html">Головна</a></li>
-			</ol>
-			<h2>Кольорова палітра:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="colors.html">Всі кольори</a></li>
+				<li><a target="_blank" href="home.html">Landing Page</a></li>
 			</ol>
 			<h2>Попапи:</h2>
 			<ol class="rootpage__list">
@@ -45,12 +41,18 @@
 			</ol>
 			<h2>Стандартні блоки:</h2>
 			<ol class="rootpage__list">
-				<li><a target="_blank" href="сomponents.html">Карточки</a></li>
+				<li><a target="_blank" href="сomponents.html">Компоненти (текст і карточки)</a></li>
 			</ol>
+			<h2>Дизайн:</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="colors.html">Кольорова палітра</a></li>
+				<li><a target="_blank" href="/src/Landing Page Anna Golubovska-design.pdf">Прототип дизайну(pdf)</a></li>
+			</ol>
+
 			<div class="rootpage__contacts">
 				<h2>Мої контакти:</h2>
 				<p>Пошта: <a href="mailto:andrii.iakovliev@gmail.com">andrii.iakovliev@gmail.com</a></p>
-				<p>Телефон: <a href="tel:+380500379676">+380500379676</a></p>
+				<p>Телефон: <a href="tel:+380500379676">+380 50 037 96 76</a></p>
 			</div>
 		</div>
 	</div>
@@ -121,6 +123,7 @@
 	.rootpage {
 		display: flex;
 		height: 100%;
+
 	}
 
 	.rootpage__content,
@@ -128,7 +131,7 @@
 		padding: 15px;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		justify-content: space-between;
 
 	}
 
@@ -139,6 +142,7 @@
 	.rootpage__content {
 		background-color: #588bad;
 		width: 100%;
+		padding: 25px;
 
 	}
 
@@ -183,13 +187,13 @@
 	h1 {
 		color: #fff;
 		font-size: 2.5rem;
-		margin: 0px 0px 1.25rem 0px;
+		/* margin: 0px 0px 1.25rem 0px; */
 	}
 
 	@media (max-width: 767px) {
 		h1 {
 			font-size: 1.85rem;
-			margin: 0px 0px 1.25rem 0px;
+			/* margin: 0px 0px 1.25rem 0px; */
 		}
 	}
 
@@ -197,13 +201,13 @@
 		/* padding: 0.9375rem; */
 		color: #fff;
 		font-size: 1.25rem;
-		margin: 0px 0px 1rem 0px;
+		/* margin: 0px 0px 1rem 0px; */
 	}
 
 	@media (max-width: 767px) {
 		h2 {
 			font-size: 1.125rem;
-			margin: 0px 0px 1rem 0px;
+			/* margin: 0px 0px 1rem 0px; */
 		}
 	}
 
@@ -226,15 +230,15 @@
 
 	.rootpage__info {
 		line-height: 140%;
-		margin: 0px 0px 1.5rem 0px;
+		/* margin: 0px 0px 1.5rem 0px; */
 	}
 
 	.rootpage__list {
-		margin: 0px 0px 2.25rem 1.25rem;
+		/* margin: 0px 0px 2.25rem 1.25rem; */
 	}
 
 	.rootpage__list li:not(:last-child) {
-		margin: 0px 0px 15px 0px;
+		/* margin: 0px 0px 15px 0px; */
 	}
 
 	.rootpage__contacts,
@@ -269,7 +273,7 @@
 
 	.rootpage__tnx {
 		background: #c22d63;
-		margin: 0px 0px 1rem 0px;
+		/* margin: 0px 0px 1rem 0px; */
 	}
 </style>
 
