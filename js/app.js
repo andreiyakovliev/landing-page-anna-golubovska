@@ -3864,6 +3864,21 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    const standart = document.querySelector(".button-cirlce__gray");
+    const gray = document.querySelector(".button-cirlce__light-gray");
+    const dark = document.querySelector(".button-cirlce__dark");
+    standart.addEventListener("click", (() => {
+        document.body.classList.remove("dark-theme");
+        document.body.classList.remove("gray-theme");
+    }));
+    gray.addEventListener("click", (() => {
+        document.body.classList.remove("dark-theme");
+        document.body.classList.add("gray-theme");
+    }));
+    dark.addEventListener("click", (() => {
+        document.body.classList.add("dark-theme");
+        document.body.classList.remove("gray-theme");
+    }));
     window["FLS"] = true;
     menuInit();
     spollers();
