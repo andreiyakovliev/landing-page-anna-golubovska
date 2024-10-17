@@ -3864,20 +3864,23 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    const standart = document.querySelector(".button-cirlce__gray");
-    const gray = document.querySelector(".button-cirlce__light-gray");
-    const dark = document.querySelector(".button-cirlce__dark");
-    standart.addEventListener("click", (() => {
-        document.body.classList.remove("dark-theme");
-        document.body.classList.remove("gray-theme");
-    }));
-    gray.addEventListener("click", (() => {
-        document.body.classList.remove("dark-theme");
-        document.body.classList.add("gray-theme");
-    }));
-    dark.addEventListener("click", (() => {
-        document.body.classList.add("dark-theme");
-        document.body.classList.remove("gray-theme");
+    const paymentLinks = {
+        1: [ "https://secure.wayforpay.com/button/bae4f7d3bf7f0", "https://secure.wayforpay.com/button/google-1", "https://secure.wayforpay.com/button/apple-1", "https://secure.wayforpay.com/button/paypal-1" ],
+        2: [ "https://secure.wayforpay.com/button/product2-card", "https://secure.wayforpay.com/button/product2-google", "https://secure.wayforpay.com/button/product2-apple", "https://secure.wayforpay.com/button/product2-paypal" ],
+        3: [ "https://secure.wayforpay.com/button/product3-card", "https://secure.wayforpay.com/button/product3-google", "https://secure.wayforpay.com/button/product3-apple", "https://secure.wayforpay.com/button/product3-paypal" ]
+    };
+    document.querySelectorAll(".price__button").forEach((button => {
+        button.addEventListener("click", (function(event) {
+            event.preventDefault();
+            const productId = this.getAttribute("data-product");
+            console.log(`productId: ${productId}`);
+            if (paymentLinks[productId]) {
+                document.getElementById("payment-card").setAttribute("href", paymentLinks[productId][0]);
+                document.getElementById("payment-google").setAttribute("href", paymentLinks[productId][1]);
+                document.getElementById("payment-apple").setAttribute("href", paymentLinks[productId][2]);
+                document.getElementById("payment-paypal").setAttribute("href", paymentLinks[productId][3]);
+            } else console.error(`Невідомий productId: ${productId}`);
+        }));
     }));
     window["FLS"] = true;
     menuInit();

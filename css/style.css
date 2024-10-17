@@ -175,6 +175,7 @@ body {
 .menu {
   position: relative;
   color: var(--text-accent);
+  background-color: var(--primary);
   display: flex;
   justify-content: space-between
 }
@@ -183,7 +184,8 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: .75rem;
-  padding: 1.5rem 0
+  padding: 1.5rem 0;
+  width: 100%
 }
 .menu__list {
   display: flex;
@@ -366,8 +368,14 @@ body::after {
 .popup__block {
   padding: 1rem
 }
+.popup__title {
+  text-align: center
+}
 .popup__title:not(:last-child) {
   margin-bottom: 1rem
+}
+.popup__text {
+  text-align: center
 }
 .popup__text:not(:last-child) {
   margin-bottom: 1rem
@@ -524,8 +532,7 @@ body::after {
   color: var(--text-secondary)
 }
 .text {
-  line-height: 1.8;
-  text-align: justify
+  line-height: 1.8
 }
 .text--paragraph {
   line-height: 1.6
@@ -546,6 +553,9 @@ body::after {
 }
 .text--inverse {
   color: var(--text-inverse)
+}
+.text--justify {
+  text-align: justify
 }
 .button {
   position: relative;
@@ -621,7 +631,7 @@ body::after {
   flex-direction: column;
   position: fixed;
   top: 7%;
-  right: 5%;
+  left: 5%;
   padding: .625rem;
   border-radius: 1rem;
   z-index: 200;
@@ -858,6 +868,9 @@ body::after {
   color: var(--text-primary);
   flex: 1
 }
+.gray-theme .price__card {
+  background-color: var(--bg-primary)
+}
 .price__card:nth-child(2) {
   background-color: #2091f9;
   color: var(--text-accent)
@@ -915,6 +928,37 @@ body::after {
 }
 .components__header:not(:last-child) {
   margin-bottom: .9375rem
+}
+.payment {
+  display: grid;
+  place-items: center;
+  min-height: 100vh
+}
+.payment__container {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  gap: 2rem
+}
+.payment__title {
+  text-align: center;
+  color: red
+}
+.payment__title:not(:last-child) {
+  margin-bottom: 1rem
+}
+.payment__text {
+  text-align: center
+}
+.payment__text:not(:last-child) {
+  margin-bottom: 1rem
+}
+.payment__action {
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  grid-template-rows: repeat(2,auto);
+  gap: 1rem;
+  text-align: center
 }
 .swiper {
   overflow: hidden
@@ -1036,13 +1080,18 @@ body::after {
 }
 @media (max-width:77.31125em) {
   .menu {
-    padding: .9375rem 0
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem
   }
   .menu__body {
     flex-direction: column;
     gap: 2rem;
     position: fixed;
-    width: 50%;
+    width: 60%;
     height: 100%;
     right: -100%;
     top: 0;
@@ -1050,7 +1099,7 @@ body::after {
     padding: 3.125rem .9375rem .9375rem 1.875rem;
     transition: left .3s;
     backdrop-filter: blur(80px);
-    background-color: hsla(0,0%,100%,.05)
+    background: rgba(11,13,23,.15)
   }
   .menu__body::before {
     content: "";
@@ -1070,7 +1119,7 @@ body::after {
   }
   .menu__list {
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-start;
     height: 100%
   }
   .menu__item-about {
@@ -1158,6 +1207,9 @@ body::after {
   }
 }
 @media (max-width:47.99875em) {
+  .popup__action {
+    grid-template-columns: auto
+  }
   .promo-section__media img {
     max-width: 100%
   }
@@ -1175,6 +1227,9 @@ body::after {
   }
   .price__cards {
     display: grid;
+    grid-template-columns: auto
+  }
+  .payment__action {
     grid-template-columns: auto
   }
 }
@@ -1209,10 +1264,10 @@ body::after {
     font-size: 1.125rem
   }
   .text--header {
-    font-size: 1.5rem
+    font-size: 1rem
   }
   .text--footer {
-    font-size: 1.125rem
+    font-size: .875rem
   }
   .promo-section {
     gap: 2rem
@@ -1295,10 +1350,10 @@ body::after {
     font-size: clamp(1.125rem ,.9929577465rem + .5633802817vw ,1.5rem)
   }
   .text--header {
-    font-size: clamp(1.25rem ,1.588028169rem + -.3755868545vw ,1.5rem)
+    font-size: clamp(1rem ,.911971831rem + .3755868545vw ,1.25rem)
   }
   .text--footer {
-    font-size: clamp(1rem ,1.1690140845rem + -.1877934272vw ,1.125rem)
+    font-size: clamp(.875rem ,.8309859155rem + .1877934272vw ,1rem)
   }
   .promo-section {
     gap: clamp(2rem ,.9436619718rem + 4.5070422535vw ,5rem)
