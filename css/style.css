@@ -893,7 +893,7 @@ body::after {
   text-align: center
 }
 .price__feature li::before {
-  content: "✓";
+  content: "✅";
   margin-right: .625rem
 }
 .price__feature:not(:last-child) {
