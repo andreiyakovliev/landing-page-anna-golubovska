@@ -761,18 +761,8 @@ body::after {
 .mission__image img {
   max-width: 100%;
   min-height: 450px;
-  border-radius: 16px
-}
-.mission__content {
-  position: absolute;
-  top: 0;
-  right: 2.5rem;
-  left: 2.5rem;
-  background-color: var(--bg-accent);
-  opacity: .8;
-  width: calc(100% - 5rem);
-  height: 100%;
-  border-radius: 16px
+  border-radius: 16px;
+  opacity: .5
 }
 .mission__text {
   position: absolute;
@@ -780,7 +770,7 @@ body::after {
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  color: #fff;
+  color: #000;
   text-align: center;
   width: 100%
 }
@@ -1027,6 +1017,30 @@ body::after {
 .price__cards-copy>:nth-child(3) {
   grid-column: 1/-1
 }
+.mission__content-copy {
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+  left: 2.5rem;
+  background-color: var(--bg-accent);
+  opacity: .8;
+  width: calc(100% - 5rem);
+  height: 100%;
+  border-radius: 16px
+}
+.mission__text-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  color: #fff;
+  text-align: center;
+  width: 100%
+}
+.mission__text-copy p:not(:last-child) {
+  margin-bottom: 2rem
+}
 .swiper {
   overflow: hidden
 }
@@ -1164,6 +1178,12 @@ body::after {
   }
   .hero__container-copy {
     margin-bottom: 5rem
+  }
+  .mission__text-copy {
+    padding-right: 12.5rem
+  }
+  .mission__text-copy {
+    padding-left: 12.5rem
   }
 }
 @media (min-width:90em) {
@@ -1474,6 +1494,12 @@ body::after {
   .hero__container-copy {
     margin-bottom: 3rem
   }
+  .mission__text-copy {
+    padding-right: .9375rem
+  }
+  .mission__text-copy {
+    padding-left: .9375rem
+  }
 }
 @media (min-width:23.4375em)and (max-width:85em) {
   .title {
@@ -1582,6 +1608,12 @@ body::after {
   }
   .hero__container-copy {
     margin-bottom: clamp(3rem ,2.2385786802rem + 3.2487309645vw ,5rem)
+  }
+  .mission__text-copy {
+    padding-right: clamp(.9375rem ,-3.4644670051rem + 18.7817258883vw ,12.5rem)
+  }
+  .mission__text-copy {
+    padding-left: clamp(.9375rem ,-3.4644670051rem + 18.7817258883vw ,12.5rem)
   }
 }
 @media (min-width:23.4375em)and (max-width:90em) {
