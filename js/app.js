@@ -3864,21 +3864,6 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    const standart = document.querySelector(".button-cirlce__gray");
-    const gray = document.querySelector(".button-cirlce__light-gray");
-    const dark = document.querySelector(".button-cirlce__dark");
-    standart.addEventListener("click", (() => {
-        document.body.classList.remove("dark-theme");
-        document.body.classList.remove("gray-theme");
-    }));
-    gray.addEventListener("click", (() => {
-        document.body.classList.remove("dark-theme");
-        document.body.classList.add("gray-theme");
-    }));
-    dark.addEventListener("click", (() => {
-        document.body.classList.add("dark-theme");
-        document.body.classList.remove("gray-theme");
-    }));
     const paymentLinks = {
         1: [ "https://secure.wayforpay.com/button/bae4f7d3bf7f0", "https://secure.wayforpay.com/button/google-1", "https://secure.wayforpay.com/button/apple-1", "https://secure.wayforpay.com/button/paypal-1" ],
         2: [ "https://secure.wayforpay.com/button/product2-card", "https://secure.wayforpay.com/button/product2-google", "https://secure.wayforpay.com/button/product2-apple", "https://secure.wayforpay.com/button/product2-paypal" ],
@@ -3896,6 +3881,14 @@
                 document.getElementById("payment-paypal").setAttribute("href", paymentLinks[productId][3]);
             } else console.error(`Невідомий productId: ${productId}`);
         }));
+    }));
+    window.addEventListener("scroll", (() => {
+        const blockHowWorks = document.querySelector(".how-works");
+        const blockHowWorksPosition = blockHowWorks.getBoundingClientRect();
+        const windowsPosition = window.scrollY;
+        const pageButton = document.querySelector(".page__button");
+        const windowWidth = window.innerWidth;
+        if (windowWidth > 1236.98) if (blockHowWorksPosition.bottom < windowsPosition) pageButton.style.display = "block"; else pageButton.style.display = "none"; else pageButton.style.display = "none";
     }));
     window["FLS"] = true;
     menuInit();
