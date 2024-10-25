@@ -45,7 +45,7 @@
 body,
 html {
   height: 100%;
-  min-width: 375px
+  min-width: 360px
 }
 body {
   color: #fff;
@@ -266,97 +266,6 @@ body {
 .icon-menu {
   display: none
 }
-body::after {
-  content: "";
-  background-color: rgba(0,0,0,.5);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity .8s ease 0s;
-  pointer-events: none;
-  z-index: 149
-}
-.popup-show body::after {
-  opacity: 1
-}
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  padding: 30px 10px;
-  transition: visibility .8s ease 0s;
-  visibility: hidden;
-  pointer-events: none
-}
-.popup__close svg {
-  stroke: #252932
-}
-.popup_show {
-  z-index: 150;
-  visibility: visible;
-  overflow: auto;
-  pointer-events: auto
-}
-.popup_show .popup__content {
-  visibility: visible;
-  -webkit-transform: scale(1);
-  transform: scale(1)
-}
-.popup__wrapper {
-  flex-direction: column;
-  min-height: 100%;
-  flex: 1 1 auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-.popup__content {
-  visibility: hidden;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  transition: -webkit-transform .3s ease 0s;
-  transition: transform .3s ease 0s;
-  transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
-  box-sizing: border-box;
-  box-shadow: inset 5px 5px 4px 0 hsla(0,0%,100%,.08),inset -5px -5px 4px 0 hsla(0,0%,100%,.04);
-  backdrop-filter: blur(20px);
-  background: linear-gradient(135deg,rgba(255,255,255,.3) 0,rgba(255,255,255,0) 100%);
-  padding: 20px;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 20px
-}
-.lock .popup__content {
-  visibility: visible
-}
-.popup__block {
-  padding: 1rem
-}
-.popup__title {
-  text-align: center
-}
-.popup__title:not(:last-child) {
-  margin-bottom: 1rem
-}
-.popup__text {
-  text-align: center
-}
-.popup__text:not(:last-child) {
-  margin-bottom: 1rem
-}
-.popup__action {
-  display: grid;
-  grid-template-columns: repeat(2,auto);
-  grid-template-rows: repeat(2,auto);
-  gap: 1rem;
-  text-align: center
-}
 .faq__spollers {
   display: grid;
   row-gap: 2rem
@@ -365,11 +274,11 @@ body::after {
   width: 100%;
   cursor: default;
   text-align: left;
-  padding: 1.5rem 1rem;
+  padding-right: 2.5rem;
   position: relative;
   list-style: none;
   border-top: 1px solid #e2e8f0;
-  color: #2563eb
+  color: var(--primary)
 }
 .faq__spollers-title p {
   max-width: 80%
@@ -444,7 +353,7 @@ body::after {
   transform: rotate(40deg)
 }
 .faq__spollers-body {
-  padding: 2rem 1rem
+  padding: 1rem 0
 }
 .faq__spollers-body span {
   font-weight: 600
@@ -650,9 +559,9 @@ body::after {
   color: var(--text-accent)
 }
 .hero__container {
-  display: flex;
-  justify-content: center;
-  align-self: center
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto
 }
 .hero__polygon {
   position: absolute;
@@ -669,7 +578,26 @@ body::after {
   z-index: 1;
   width: 100%
 }
+.hero__title {
+  grid-column: span 2/span 2;
+  z-index: 3
+}
+.hero__text {
+  grid-row-start: 2;
+  z-index: 3;
+  align-self: center
+}
+.hero__button {
+  justify-self: center;
+  align-self: center;
+  grid-column-start: 1;
+  grid-row-start: 3;
+  display: inline-block
+}
 .hero__media {
+  grid-row: span 2/span 2;
+  grid-column-start: 2;
+  grid-row-start: 2;
   flex: 1 1 60%;
   display: flex;
   justify-content: center;
@@ -721,9 +649,21 @@ body::after {
 }
 .mission__image img {
   max-width: 100%;
-  min-height: 450px;
+  min-height: 300px;
   border-radius: 16px;
-  opacity: .5
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.mission__content {
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+  left: 2.5rem;
+  background-color: var(--bg-accent);
+  opacity: .8;
+  width: calc(100% - 5rem);
+  height: 100%;
+  border-radius: 16px
 }
 .mission__text {
   position: absolute;
@@ -731,7 +671,7 @@ body::after {
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  color: #000;
+  color: #fff;
   text-align: center;
   width: 100%
 }
@@ -811,11 +751,14 @@ body::after {
 }
 .price__cards {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(2,1fr);
   grid-template-rows: auto;
   gap: 3.125rem;
   width: 100%;
   height: 100%
+}
+.price__cards>:nth-child(3) {
+  grid-column: 1/-1
 }
 .price__card {
   display: flex;
@@ -830,10 +773,6 @@ body::after {
 }
 .gray-theme .price__card {
   background-color: var(--bg-primary)
-}
-.price__card:nth-child(2) {
-  background-color: #2091f9;
-  color: var(--text-accent)
 }
 .price__title {
   text-align: center
@@ -854,6 +793,9 @@ body::after {
   align-self: flex-start;
   flex-grow: 1;
   width: 100%
+}
+.price__feature ul {
+  padding-left: 1rem
 }
 .price__feature ul li::before {
   content: "✓";
@@ -926,77 +868,6 @@ body::after {
   grid-template-rows: repeat(2,auto);
   gap: 1rem;
   text-align: center
-}
-.hero__container-copy {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: auto
-}
-.hero__polygon-copy {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--primary);
-  clip-path: polygon(0 0,100% 0,95% 83%,0 100%);
-  z-index: 1
-}
-.hero__title-copy {
-  grid-column: span 2/span 2;
-  z-index: 3
-}
-.hero__text-copy {
-  grid-row-start: 2;
-  z-index: 3;
-  align-self: center
-}
-.hero__button-copy {
-  justify-self: center;
-  align-self: center;
-  grid-column-start: 1;
-  grid-row-start: 3;
-  display: inline-block
-}
-.hero__media-copy {
-  grid-row: span 2/span 2;
-  grid-column-start: 2;
-  grid-row-start: 2
-}
-.price__cards-copy {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: auto;
-  gap: 3.125rem;
-  width: 100%;
-  height: 100%
-}
-.price__cards-copy>:nth-child(3) {
-  grid-column: 1/-1
-}
-.mission__content-copy {
-  position: absolute;
-  top: 0;
-  right: 2.5rem;
-  left: 2.5rem;
-  background-color: var(--bg-accent);
-  opacity: .8;
-  width: calc(100% - 5rem);
-  height: 100%;
-  border-radius: 16px
-}
-.mission__text-copy {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  color: #fff;
-  text-align: center;
-  width: 100%
-}
-.mission__text-copy p:not(:last-child) {
-  margin-bottom: 2rem
 }
 .swiper {
   overflow: hidden
@@ -1072,7 +943,12 @@ body::after {
     gap: 2rem
   }
   .hero__container {
-    gap: 5rem
+    -webkit-column-gap: 5rem;
+    -moz-column-gap: 5rem;
+    column-gap: 5rem
+  }
+  .hero__container {
+    row-gap: 2rem
   }
   .hero__container {
     padding-top: 3.6875rem
@@ -1125,32 +1001,18 @@ body::after {
   .price__title:not(:last-child) {
     margin-bottom: 5rem
   }
-  .hero__container-copy {
-    -webkit-column-gap: 5rem;
-    -moz-column-gap: 5rem;
-    column-gap: 5rem
-  }
-  .hero__container-copy {
-    row-gap: 2rem
-  }
-  .hero__container-copy {
-    padding-top: 3.6875rem
-  }
-  .hero__container-copy {
-    margin-bottom: 5rem
-  }
-  .mission__text-copy {
-    padding-right: 12.5rem
-  }
-  .mission__text-copy {
-    padding-left: 12.5rem
-  }
 }
 @media (min-width:90em) {
   .service__container>* {
     padding-top: 5rem
   }
   .service__container>* {
+    padding-bottom: 5rem
+  }
+  .why-me {
+    padding-top: 5rem
+  }
+  .why-me {
     padding-bottom: 5rem
   }
   .testimonials__container {
@@ -1279,30 +1141,20 @@ body::after {
   .promo-section__media img {
     max-width: 60%
   }
-  .hero__container {
-    flex-direction: column
-  }
   .hero__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center
   }
-  .price__cards {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: auto
-  }
-  .price__cards>:nth-child(3) {
-    grid-column: 1/-1
-  }
 }
 @media (max-width:47.99875em) {
-  .popup__action {
-    grid-template-columns: auto
-  }
   .promo-section__media img {
     max-width: 100%
+  }
+  .hero__container {
+    display: flex;
+    flex-direction: column
   }
   .how-works__items {
     grid-template-columns: auto
@@ -1312,14 +1164,6 @@ body::after {
     grid-template-columns: auto
   }
   .payment__action {
-    grid-template-columns: auto
-  }
-  .hero__container-copy {
-    display: flex;
-    flex-direction: column
-  }
-  .price__cards-copy {
-    display: grid;
     grid-template-columns: auto
   }
 }
@@ -1335,6 +1179,26 @@ body::after {
   }
 }
 @media (max-width:23.4375em) {
+  .service__container>* {
+    padding-top: 3rem
+  }
+  .service__container>* {
+    padding-bottom: 3rem
+  }
+  .why-me {
+    padding-top: 3rem
+  }
+  .why-me {
+    padding-bottom: 3rem
+  }
+  .testimonials__container {
+    row-gap: 2rem
+  }
+  .faq__title:not(:last-child) {
+    margin-bottom: 2rem
+  }
+}
+@media (max-width:22.5em) {
   .title {
     font-size: 2.5rem
   }
@@ -1378,7 +1242,12 @@ body::after {
     gap: 1rem
   }
   .hero__container {
-    gap: 2rem
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem
+  }
+  .hero__container {
+    row-gap: .5rem
   }
   .hero__container {
     padding-top: 6rem
@@ -1416,23 +1285,11 @@ body::after {
   .how-works__item {
     padding-right: 1rem
   }
-  .service__container>* {
-    padding-top: 3rem
-  }
-  .service__container>* {
-    padding-bottom: 3rem
-  }
   .mission__text {
     padding-right: .9375rem
   }
   .mission__text {
     padding-left: .9375rem
-  }
-  .testimonials__container {
-    row-gap: 2rem
-  }
-  .faq__title:not(:last-child) {
-    margin-bottom: 2rem
   }
   .price__container {
     padding-top: 3rem
@@ -1442,144 +1299,109 @@ body::after {
   }
   .price__title:not(:last-child) {
     margin-bottom: 2rem
-  }
-  .hero__container-copy {
-    -webkit-column-gap: 2rem;
-    -moz-column-gap: 2rem;
-    column-gap: 2rem
-  }
-  .hero__container-copy {
-    row-gap: .5rem
-  }
-  .hero__container-copy {
-    padding-top: 6rem
-  }
-  .hero__container-copy {
-    margin-bottom: 3rem
-  }
-  .mission__text-copy {
-    padding-right: .9375rem
-  }
-  .mission__text-copy {
-    padding-left: .9375rem
   }
 }
-@media (min-width:23.4375em)and (max-width:85em) {
+@media (min-width:22.5em)and (max-width:85em) {
   .title {
-    font-size: clamp(2.5rem ,1.7385786802rem + 3.2487309645vw ,4.5rem)
+    font-size: clamp(2.5rem ,1.78rem + 3.2vw ,4.5rem)
   }
   .title--block {
-    font-size: clamp(2rem ,1.4289340102rem + 2.4365482234vw ,3.5rem)
+    font-size: clamp(2rem ,1.46rem + 2.4vw ,3.5rem)
   }
   .title--subtitle {
-    font-size: clamp(2rem ,1.4289340102rem + 2.4365482234vw ,3.5rem)
+    font-size: clamp(2rem ,1.46rem + 2.4vw ,3.5rem)
   }
   .title--card span {
-    font-size: clamp(1rem ,.8096446701rem + .8121827411vw ,1.5rem)
+    font-size: clamp(1rem ,.82rem + .8vw ,1.5rem)
   }
   .title--card {
-    font-size: clamp(1.25rem ,1.0596446701rem + .8121827411vw ,1.75rem)
+    font-size: clamp(1.25rem ,1.07rem + .8vw ,1.75rem)
   }
   .text {
-    font-size: clamp(1rem ,.904822335rem + .4060913706vw ,1.25rem)
+    font-size: clamp(1rem ,.91rem + .4vw ,1.25rem)
   }
   .text--paragraph {
-    font-size: clamp(1.125rem ,.9822335025rem + .6091370558vw ,1.5rem)
+    font-size: clamp(1.125rem ,.99rem + .6vw ,1.5rem)
   }
   .text--header {
-    font-size: clamp(1rem ,.904822335rem + .4060913706vw ,1.25rem)
+    font-size: clamp(1rem ,.91rem + .4vw ,1.25rem)
   }
   .text--footer {
-    font-size: clamp(.875rem ,.8274111675rem + .2030456853vw ,1rem)
+    font-size: clamp(.875rem ,.83rem + .2vw ,1rem)
   }
   .button {
-    font-size: clamp(1.125rem ,.9822335025rem + .6091370558vw ,1.5rem)
+    font-size: clamp(1.125rem ,.99rem + .6vw ,1.5rem)
   }
   .promo-section {
-    gap: clamp(2rem ,.8578680203rem + 4.8730964467vw ,5rem)
+    gap: clamp(2rem ,.92rem + 4.8vw ,5rem)
   }
   .promo-section__content li:not(:last-child) {
-    margin-bottom: clamp(.5rem ,.3096446701rem + .8121827411vw ,1rem)
+    margin-bottom: clamp(.5rem ,.32rem + .8vw ,1rem)
   }
   .promo-section__text p:not(:last-child) {
-    margin-bottom: clamp(1rem ,.6192893401rem + 1.6243654822vw ,2rem)
+    margin-bottom: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
   .footer__social {
-    gap: clamp(1rem ,.6192893401rem + 1.6243654822vw ,2rem)
+    gap: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
   .hero__container {
-    gap: clamp(2rem ,.8578680203rem + 4.8730964467vw ,5rem)
+    -webkit-column-gap: clamp(2rem ,.92rem + 4.8vw ,5rem);
+    -moz-column-gap: clamp(2rem ,.92rem + 4.8vw ,5rem);
+    column-gap: clamp(2rem ,.92rem + 4.8vw ,5rem)
   }
   .hero__container {
-    padding-top: clamp(3.6875rem ,6.880393401rem + -3.7563451777vw ,6rem)
+    row-gap: clamp(.5rem ,-.04rem + 2.4vw ,2rem)
   }
   .hero__container {
-    margin-bottom: clamp(3rem ,2.2385786802rem + 3.2487309645vw ,5rem)
+    padding-top: clamp(3.6875rem ,6.8325rem + -3.7vw ,6rem)
+  }
+  .hero__container {
+    margin-bottom: clamp(3rem ,2.28rem + 3.2vw ,5rem)
   }
   .hero__title:not(:last-child) {
-    margin-bottom: clamp(1rem ,.6192893401rem + 1.6243654822vw ,2rem)
+    margin-bottom: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
   .hero__text:not(:last-child) {
-    margin-bottom: clamp(1rem ,.6192893401rem + 1.6243654822vw ,2rem)
+    margin-bottom: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
   .hero__subtitle:not(:last-child) {
-    margin-bottom: clamp(1rem ,.6192893401rem + 1.6243654822vw ,2rem)
+    margin-bottom: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
   .hero__media {
-    margin-bottom: clamp(1rem ,-.9035532995rem + 8.1218274112vw ,6rem)
+    margin-bottom: clamp(1rem ,-.8rem + 8vw ,6rem)
   }
   .how-works {
-    padding-top: clamp(3rem ,2.2385786802rem + 3.2487309645vw ,5rem)
+    padding-top: clamp(3rem ,2.28rem + 3.2vw ,5rem)
   }
   .how-works {
-    padding-bottom: clamp(3rem ,2.2385786802rem + 3.2487309645vw ,5rem)
+    padding-bottom: clamp(3rem ,2.28rem + 3.2vw ,5rem)
   }
   .how-works__title:not(:last-child) {
-    margin-bottom: clamp(2rem ,.8578680203rem + 4.8730964467vw ,5rem)
+    margin-bottom: clamp(2rem ,.92rem + 4.8vw ,5rem)
   }
   .how-works__items {
-    gap: clamp(2rem ,1.8096446701rem + .8121827411vw ,2.5rem)
+    gap: clamp(2rem ,1.82rem + .8vw ,2.5rem)
   }
   .how-works__item {
-    padding-left: clamp(1rem ,.6192893401rem + 1.6243654822vw ,2rem)
+    padding-left: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
   .how-works__item {
-    padding-right: clamp(1rem ,.6192893401rem + 1.6243654822vw ,2rem)
+    padding-right: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
   .mission__text {
-    padding-right: clamp(.9375rem ,-3.4644670051rem + 18.7817258883vw ,12.5rem)
+    padding-right: clamp(.9375rem ,-3.225rem + 18.5vw ,12.5rem)
   }
   .mission__text {
-    padding-left: clamp(.9375rem ,-3.4644670051rem + 18.7817258883vw ,12.5rem)
+    padding-left: clamp(.9375rem ,-3.225rem + 18.5vw ,12.5rem)
   }
   .price__container {
-    padding-top: clamp(3rem ,2.2385786802rem + 3.2487309645vw ,5rem)
+    padding-top: clamp(3rem ,2.28rem + 3.2vw ,5rem)
   }
   .price__container {
-    padding-bottom: clamp(3rem ,2.2385786802rem + 3.2487309645vw ,5rem)
+    padding-bottom: clamp(3rem ,2.28rem + 3.2vw ,5rem)
   }
   .price__title:not(:last-child) {
-    margin-bottom: clamp(2rem ,.8578680203rem + 4.8730964467vw ,5rem)
-  }
-  .hero__container-copy {
-    -webkit-column-gap: clamp(2rem ,.8578680203rem + 4.8730964467vw ,5rem);
-    -moz-column-gap: clamp(2rem ,.8578680203rem + 4.8730964467vw ,5rem);
-    column-gap: clamp(2rem ,.8578680203rem + 4.8730964467vw ,5rem)
-  }
-  .hero__container-copy {
-    row-gap: clamp(.5rem ,-.0710659898rem + 2.4365482234vw ,2rem)
-  }
-  .hero__container-copy {
-    padding-top: clamp(3.6875rem ,6.880393401rem + -3.7563451777vw ,6rem)
-  }
-  .hero__container-copy {
-    margin-bottom: clamp(3rem ,2.2385786802rem + 3.2487309645vw ,5rem)
-  }
-  .mission__text-copy {
-    padding-right: clamp(.9375rem ,-3.4644670051rem + 18.7817258883vw ,12.5rem)
-  }
-  .mission__text-copy {
-    padding-left: clamp(.9375rem ,-3.4644670051rem + 18.7817258883vw ,12.5rem)
+    margin-bottom: clamp(2rem ,.92rem + 4.8vw ,5rem)
   }
 }
 @media (min-width:23.4375em)and (max-width:90em) {
@@ -1587,6 +1409,12 @@ body::after {
     padding-top: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
   }
   .service__container>* {
+    padding-bottom: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
+  }
+  .why-me {
+    padding-top: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
+  }
+  .why-me {
     padding-bottom: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
   }
   .testimonials__container {

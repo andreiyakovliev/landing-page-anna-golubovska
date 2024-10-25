@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Верстка «Landing Page Anna Golubovska»</title>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241024152747'>
-	<script src="https://kit.fontawesome.com/9eb88b0a3d.js?_v=20241024152747" crossorigin="anonymous"></script>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241025134207'>
+	<script src="https://kit.fontawesome.com/9eb88b0a3d.js?_v=20241025134207" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,13 +34,8 @@
 			<h2>Готові сторінки:</h2>
 			<ol class="rootpage__list">
 				<li><a target="_blank" href="home.html">Landing Page</a></li>
-				<li><a target="_blank" href="home-copy.html">Landing Page з альтернативою</a>
 				</li>
 				<li><a target="_blank" href="payment.html">Сторінка помилки оплати</a></li>
-			</ol>
-			<h2>Попапи:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html#popup">Вікно вибору оплати</a></li>
 			</ol>
 			<h2>Стандартні блоки:</h2>
 			<ol class="rootpage__list">
@@ -86,11 +81,10 @@
 		height: 100%;
 		margin: 0;
 		padding: 0;
-		min-width: 375px;
-		max-width: 1440px;
+
 		color: #fff;
 		background-color: #fff;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		border: 1px solid #000;
 	}
 
@@ -124,20 +118,22 @@
 	}
 
 	.wrapper {
+		min-width: 360px;
+		max-width: 1440px;
 		width: 100%;
-		min-height: 100%;
 		overflow: hidden;
 	}
 
 	.rootpage {
 		display: flex;
-		min-height: 100vh;
-
+		max-width: 1440px;
+		margin: 0 auto;
 	}
 
 	.rootpage__content,
 	.rootpage__slidebar {
-		padding: 15px;
+		padding: 10px;
+		flex-grow: 1;
 	}
 
 	.rootpage__slidebar {
@@ -146,16 +142,25 @@
 		flex-direction: column;
 		justify-content: space-between;
 		background-color: #fff;
+		flex: 0 0 54px;
 	}
 
 	.rootpage__content {
 		position: relative;
 
 		background-color: #588bad;
-		width: 100%;
-		padding: 25px;
+		min-width: 256px;
+		padding: 15px;
 		min-height: 100vh;
 
+	}
+
+	@media (max-width: 360px) {
+		.rootpage__content {
+			padding: 5px;
+			font-size: 0.9rem;
+			/* Можна зменшити шрифт для кращого відображення */
+		}
 	}
 
 
@@ -169,13 +174,6 @@
 	.rootpage__icons i:hover {
 
 		color: #FFD700;
-	}
-
-
-	@media (max-width: 767px) {
-		.rootpage {
-			/* padding: 30px 15px; */
-		}
 	}
 
 	.fi {
@@ -204,7 +202,7 @@
 
 	@media (max-width: 767px) {
 		h1 {
-			font-size: 1.85rem;
+			font-size: 1.5rem;
 			margin: 0px 0px 1.25rem 0px;
 		}
 	}
@@ -225,7 +223,7 @@
 
 	.rootpage__logo {
 		position: absolute;
-		bottom: 40%;
+		bottom: 65%;
 		left: -131%;
 		rotate: -90deg;
 		transform: translate(-50%, -50%);
