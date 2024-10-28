@@ -504,6 +504,35 @@ body {
   font-size: 1.75rem;
   white-space: nowrap
 }
+.card__title {
+  text-align: center
+}
+.card__items {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+  height: 100%
+}
+.card__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  flex: 1;
+  border: 5px solid #9ca3af;
+  border-radius: 10px;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.07),0 10px 15px -3px rgba(0,0,0,.1)
+}
+.card__card-title {
+  text-align: center
+}
+.card__text {
+  text-align: center;
+  flex-grow: 1
+}
 .header {
   z-index: 100;
   background-color: var(--primary)
@@ -566,12 +595,12 @@ body {
 }
 .hero__polygon {
   position: absolute;
-  top: 0;
+  top: -1%;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: var(--primary);
-  clip-path: polygon(0 0,100% 0,95% 83%,0 100%);
+  clip-path: polygon(0 0,101% 0,95% 83%,0 100%);
   z-index: 1
 }
 .hero__content {
@@ -609,39 +638,22 @@ body {
   max-width: 80%;
   border-radius: 16px
 }
+.for-who {
+  background-color: var(--bg-secondary)
+}
 .how-works {
   background-color: var(--bg-secondary)
 }
-.how-works__title {
-  text-align: center
-}
-.how-works__items {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  width: 100%;
-  height: 100%
-}
-.how-works__item {
+.about .promo-section {
+  flex-direction: row-reverse;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  flex: 1;
-  border: 5px solid #9ca3af;
-  border-radius: 10px;
-  box-shadow: 0 0 6px 0 rgba(0,0,0,.07),0 10px 15px -3px rgba(0,0,0,.1)
+  align-items: center
 }
-.how-works__card-title {
-  text-align: center
+.about .promo-section:nth-child(even) {
+  flex-direction: row-reverse
 }
-.how-works__text {
-  text-align: center;
-  flex-grow: 1
-}
-.service {
+.benefits {
   background-color: var(--secondary);
   color: var(--text-inverse)
 }
@@ -940,6 +952,18 @@ body {
   .promo-section__text p:not(:last-child) {
     margin-bottom: 2rem
   }
+  .card__title:not(:last-child) {
+    margin-bottom: 5rem
+  }
+  .card__items {
+    gap: 2.5rem
+  }
+  .card__item {
+    padding-left: 2rem
+  }
+  .card__item {
+    padding-right: 2rem
+  }
   .footer__social {
     gap: 2rem
   }
@@ -973,23 +997,20 @@ body {
   .hero__media {
     margin-bottom: 6rem
   }
+  .for-who {
+    padding-top: 5rem
+  }
+  .for-who {
+    padding-bottom: 5rem
+  }
   .how-works {
     padding-top: 5rem
   }
   .how-works {
     padding-bottom: 5rem
   }
-  .how-works__title:not(:last-child) {
-    margin-bottom: 5rem
-  }
-  .how-works__items {
-    gap: 2.5rem
-  }
-  .how-works__item {
-    padding-left: 2rem
-  }
-  .how-works__item {
-    padding-right: 2rem
+  .about .promo-section {
+    gap: 5rem
   }
   .mission__text {
     padding-right: 12.5rem
@@ -1008,10 +1029,16 @@ body {
   }
 }
 @media (min-width:90em) {
-  .service__container>* {
+  .about {
     padding-top: 5rem
   }
-  .service__container>* {
+  .about {
+    padding-bottom: 5rem
+  }
+  .benefits__container>* {
+    padding-top: 5rem
+  }
+  .benefits__container>* {
     padding-bottom: 5rem
   }
   .why-me {
@@ -1127,12 +1154,12 @@ body {
   }
 }
 @media (max-width:71.49875em) {
-  .how-works__items {
+  .card__items {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto
   }
-  .how-works__items>:nth-child(3) {
+  .card__items>:nth-child(3n) {
     grid-column: 1/-1
   }
 }
@@ -1152,6 +1179,12 @@ body {
     justify-content: center;
     align-items: center
   }
+  .about .promo-section:nth-child(even) {
+    flex-direction: column
+  }
+  .about .promo-section {
+    flex-direction: column
+  }
 }
 @media (max-width:47.99875em) {
   .menu__body {
@@ -1160,12 +1193,12 @@ body {
   .promo-section__media img {
     max-width: 100%
   }
+  .card__items {
+    grid-template-columns: auto
+  }
   .hero__container {
     display: flex;
     flex-direction: column
-  }
-  .how-works__items {
-    grid-template-columns: auto
   }
   .price__cards {
     display: grid;
@@ -1192,10 +1225,16 @@ body {
   }
 }
 @media (max-width:23.4375em) {
-  .service__container>* {
+  .about {
     padding-top: 3rem
   }
-  .service__container>* {
+  .about {
+    padding-bottom: 3rem
+  }
+  .benefits__container>* {
+    padding-top: 3rem
+  }
+  .benefits__container>* {
     padding-bottom: 3rem
   }
   .why-me {
@@ -1251,6 +1290,18 @@ body {
   .promo-section__text p:not(:last-child) {
     margin-bottom: 1rem
   }
+  .card__title:not(:last-child) {
+    margin-bottom: 2rem
+  }
+  .card__items {
+    gap: 2rem
+  }
+  .card__item {
+    padding-left: 1rem
+  }
+  .card__item {
+    padding-right: 1rem
+  }
   .footer__social {
     gap: 1rem
   }
@@ -1284,23 +1335,20 @@ body {
   .hero__media {
     margin-bottom: 1rem
   }
+  .for-who {
+    padding-top: 3rem
+  }
+  .for-who {
+    padding-bottom: 3rem
+  }
   .how-works {
     padding-top: 3rem
   }
   .how-works {
     padding-bottom: 3rem
   }
-  .how-works__title:not(:last-child) {
-    margin-bottom: 2rem
-  }
-  .how-works__items {
+  .about .promo-section {
     gap: 2rem
-  }
-  .how-works__item {
-    padding-left: 1rem
-  }
-  .how-works__item {
-    padding-right: 1rem
   }
   .mission__text {
     padding-right: .9375rem
@@ -1358,6 +1406,18 @@ body {
   .promo-section__text p:not(:last-child) {
     margin-bottom: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
+  .card__title:not(:last-child) {
+    margin-bottom: clamp(2rem ,.92rem + 4.8vw ,5rem)
+  }
+  .card__items {
+    gap: clamp(2rem ,1.82rem + .8vw ,2.5rem)
+  }
+  .card__item {
+    padding-left: clamp(1rem ,.64rem + 1.6vw ,2rem)
+  }
+  .card__item {
+    padding-right: clamp(1rem ,.64rem + 1.6vw ,2rem)
+  }
   .footer__social {
     gap: clamp(1rem ,.64rem + 1.6vw ,2rem)
   }
@@ -1391,23 +1451,20 @@ body {
   .hero__media {
     margin-bottom: clamp(1rem ,-.8rem + 8vw ,6rem)
   }
+  .for-who {
+    padding-top: clamp(3rem ,2.28rem + 3.2vw ,5rem)
+  }
+  .for-who {
+    padding-bottom: clamp(3rem ,2.28rem + 3.2vw ,5rem)
+  }
   .how-works {
     padding-top: clamp(3rem ,2.28rem + 3.2vw ,5rem)
   }
   .how-works {
     padding-bottom: clamp(3rem ,2.28rem + 3.2vw ,5rem)
   }
-  .how-works__title:not(:last-child) {
-    margin-bottom: clamp(2rem ,.92rem + 4.8vw ,5rem)
-  }
-  .how-works__items {
-    gap: clamp(2rem ,1.82rem + .8vw ,2.5rem)
-  }
-  .how-works__item {
-    padding-left: clamp(1rem ,.64rem + 1.6vw ,2rem)
-  }
-  .how-works__item {
-    padding-right: clamp(1rem ,.64rem + 1.6vw ,2rem)
+  .about .promo-section {
+    gap: clamp(2rem ,.92rem + 4.8vw ,5rem)
   }
   .mission__text {
     padding-right: clamp(.9375rem ,-3.225rem + 18.5vw ,12.5rem)
@@ -1426,10 +1483,16 @@ body {
   }
 }
 @media (min-width:23.4375em)and (max-width:90em) {
-  .service__container>* {
+  .about {
     padding-top: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
   }
-  .service__container>* {
+  .about {
+    padding-bottom: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
+  }
+  .benefits__container>* {
+    padding-top: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
+  }
+  .benefits__container>* {
     padding-bottom: clamp(3rem ,2.2957746479rem + 3.0046948357vw ,5rem)
   }
   .why-me {

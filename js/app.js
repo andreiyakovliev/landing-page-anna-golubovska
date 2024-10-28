@@ -3936,12 +3936,12 @@
         const da = new DynamicAdapt("max");
         da.init();
         window.addEventListener("scroll", (() => {
-            const blockHowWorks = document.querySelector(".how-works");
-            const blockHowWorksPosition = blockHowWorks.getBoundingClientRect();
+            const lastBlock = document.querySelector(".for-who");
+            const lastBlockPosition = lastBlock.getBoundingClientRect();
             const windowsPosition = window.innerHeight;
             const pageButton = document.querySelector(".page__button");
             const windowWidth = window.innerWidth;
-            if (windowWidth > 1236.98) if (blockHowWorksPosition.bottom < windowsPosition) pageButton.style.display = "block"; else pageButton.style.display = "none"; else pageButton.style.display = "none";
+            if (windowWidth > 1236.98) if (lastBlockPosition.bottom < windowsPosition) pageButton.style.display = "block"; else pageButton.style.display = "none"; else pageButton.style.display = "none";
         }));
         window["FLS"] = true;
         menuInit();
