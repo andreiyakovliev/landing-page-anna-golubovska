@@ -143,7 +143,6 @@ body {
   grid-column: 3/4
 }
 .menu {
-  position: relative;
   color: var(--text-accent);
   background-color: var(--primary);
   display: flex;
@@ -533,9 +532,14 @@ body {
   text-align: center;
   flex-grow: 1
 }
+.card__text span {
+  font-weight: 600
+}
 .header {
   z-index: 100;
-  background-color: var(--primary)
+  background-color: var(--primary);
+  position: fixed;
+  width: 100%
 }
 .header__container {
   position: relative
@@ -639,6 +643,9 @@ body {
   border-radius: 16px
 }
 .for-who {
+  background-color: var(--secondary)
+}
+.for-who .card__item {
   background-color: var(--bg-secondary)
 }
 .how-works {
@@ -980,7 +987,7 @@ body {
     row-gap: 2rem
   }
   .hero__container {
-    padding-top: 3.6875rem
+    margin-top: 9.375rem
   }
   .hero__container {
     margin-bottom: 5rem
@@ -1318,7 +1325,7 @@ body {
     row-gap: .5rem
   }
   .hero__container {
-    padding-top: 6rem
+    margin-top: 6rem
   }
   .hero__container {
     margin-bottom: 3rem
@@ -1434,7 +1441,7 @@ body {
     row-gap: clamp(.5rem ,-.04rem + 2.4vw ,2rem)
   }
   .hero__container {
-    padding-top: clamp(3.6875rem ,6.8325rem + -3.7vw ,6rem)
+    margin-top: clamp(6rem ,4.785rem + 5.4vw ,9.375rem)
   }
   .hero__container {
     margin-bottom: clamp(3rem ,2.28rem + 3.2vw ,5rem)

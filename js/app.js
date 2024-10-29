@@ -3941,7 +3941,8 @@
             const windowsPosition = window.innerHeight;
             const pageButton = document.querySelector(".page__button");
             const windowWidth = window.innerWidth;
-            if (windowWidth > 1236.98) if (lastBlockPosition.bottom < windowsPosition) pageButton.style.display = "block"; else pageButton.style.display = "none"; else pageButton.style.display = "none";
+            const burgerMenuWidth = 0;
+            if (windowWidth > burgerMenuWidth) if (lastBlockPosition.bottom < windowsPosition) pageButton.style.display = "block"; else pageButton.style.display = "none"; else pageButton.style.display = "none";
         }));
         window["FLS"] = true;
         menuInit();
