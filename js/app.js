@@ -3936,13 +3936,15 @@
         const da = new DynamicAdapt("max");
         da.init();
         window.addEventListener("scroll", (() => {
-            const lastBlock = document.querySelector(".for-who");
-            const lastBlockPosition = lastBlock.getBoundingClientRect();
-            const windowsPosition = window.innerHeight;
-            const pageButton = document.querySelector(".page__button");
-            const windowWidth = window.innerWidth;
-            const burgerMenuWidth = 0;
-            if (windowWidth > burgerMenuWidth) if (lastBlockPosition.bottom < windowsPosition) pageButton.style.display = "block"; else pageButton.style.display = "none"; else pageButton.style.display = "none";
+            if (window.location.pathname === "/home.html") {
+                const lastBlock = document.querySelector(".for-who");
+                const lastBlockPosition = lastBlock.getBoundingClientRect();
+                const windowsPosition = window.innerHeight;
+                const pageButton = document.querySelector(".page__button");
+                const windowWidth = window.innerWidth;
+                const burgerMenuWidth = 0;
+                if (windowWidth > burgerMenuWidth) if (lastBlockPosition.bottom < windowsPosition) pageButton.style.display = "block"; else pageButton.style.display = "none"; else pageButton.style.display = "none";
+            }
         }));
         window["FLS"] = true;
         menuInit();

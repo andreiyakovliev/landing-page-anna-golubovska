@@ -432,6 +432,9 @@ body {
 .text--justify {
   text-align: justify
 }
+.text--italic {
+  font-style: italic
+}
 .button {
   position: relative;
   display: inline-block;
@@ -476,15 +479,11 @@ body {
 .promo-section__content span {
   font-weight: 600
 }
-.promo-section__content ul li {
-  display: flex;
-  gap: .3125rem
-}
-.promo-section__content ul li::before {
-  content: "✓"
-}
 .promo-section__title:not(:last-child) {
   margin-bottom: 2rem
+}
+.promo-section__text li span {
+  font-weight: 700
 }
 .promo-section__media {
   flex: 1 1 50%;
@@ -538,6 +537,7 @@ body {
 .header {
   z-index: 100;
   background-color: var(--primary);
+  opacity: .8;
   position: fixed;
   width: 100%
 }
@@ -604,7 +604,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--primary);
-  clip-path: polygon(0 0,101% 0,95% 83%,0 100%);
+  clip-path: polygon(0 0,101% 0,95% 86%,0 100%);
   z-index: 1
 }
 .hero__content {
@@ -888,6 +888,19 @@ body {
   grid-template-rows: repeat(2,auto);
   gap: 1rem;
   text-align: center
+}
+.offer__container {
+  margin-top: 80px;
+  margin-bottom: 80px
+}
+.offer__title:not(:last-child) {
+  margin-bottom: 2.5rem
+}
+.offer__description:not(:last-child) {
+  margin-bottom: 1.875rem
+}
+.offer__text:not(:last-child) {
+  margin-bottom: 1.25rem
 }
 .swiper {
   overflow: hidden
