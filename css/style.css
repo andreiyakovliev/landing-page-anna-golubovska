@@ -479,6 +479,13 @@ body {
 .promo-section__content span {
   font-weight: 600
 }
+.promo-section__content ul li {
+  display: flex;
+  gap: .3125rem
+}
+.promo-section__content ul li::before {
+  content: "✓"
+}
 .promo-section__title:not(:last-child) {
   margin-bottom: 2rem
 }
