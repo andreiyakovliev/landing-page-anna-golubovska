@@ -890,9 +890,10 @@ body {
   margin-bottom: 1rem
 }
 .payment__action {
-  display: grid;
-  grid-template-columns: repeat(2,auto);
-  grid-template-rows: repeat(2,auto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
   text-align: center
 }
@@ -1102,7 +1103,7 @@ body {
     padding: 3.125rem .9375rem .9375rem 1.875rem;
     transition: left .3s;
     backdrop-filter: blur(80px);
-    background: rgba(11,13,23,.15)
+    background: #0b0d17
   }
   .menu__body::before {
     content: "";
@@ -1123,7 +1124,8 @@ body {
   .menu__list {
     flex-direction: column;
     align-items: flex-start;
-    height: 100%
+    height: 100%;
+    gap: 1rem
   }
   .menu__link-hide {
     display: none
