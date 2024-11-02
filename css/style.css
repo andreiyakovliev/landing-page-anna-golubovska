@@ -1100,7 +1100,7 @@ body {
     right: -100%;
     top: 0;
     overflow: auto;
-    padding: 3.125rem .9375rem .9375rem 1.875rem;
+    padding: 1.5rem .9375rem;
     transition: left .3s;
     backdrop-filter: blur(80px);
     background: #0b0d17
@@ -1174,6 +1174,9 @@ body {
     display: none
   }
   .footer__title {
+    display: none
+  }
+  .footer__menu-body {
     display: none
   }
 }
