@@ -1,289 +1,614 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 
 <head>
+	<title>Residency Test</title>
 	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20241104223901">
+	<link rel="preload" href="https://fonts.gstatic.com/s/materialsymbolsoutlined/v213/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&_v=20241104223901">
+	<!-- =============== Flaticon brands =============== -->
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241104223901'>
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Верстка «Landing Page Anna Golubovska»</title>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css?_v=20241104222716'>
-	<script src="https://kit.fontawesome.com/9eb88b0a3d.js?_v=20241104222716" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div class="rootpage">
-		<div class="rootpage__slidebar">
-			<div class="rootpage__logo">
-				<img src="img/andrii_yakovliev-logo.svg" alt="logo">
+	<div class="wrapper">
+		<header class="header header__main">
+			<div class="header__container">
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list text text--header">
+							<li>
+								<a href="#" class="header__logo logo" data-da=".header__menu, 1236.98, 0">TaxTest</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" data-goto=".hero" class="menu__link" data-goto-top="25">Головна</a>
+							</li>
+							<li class="menu__item menu__link-hide">
+								<div class="menu__link" data-goto-top="25"><span>Про тест</span>
+									<svg viewBox="0 0 360 360" xml:space="preserve">
+										<g id="SVGRepo_iconCarrier">
+											<path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z">
+											</path>
+										</g>
+									</svg>
+								</div>
+								<ul class="submenu">
+									<li class="submenu__item" data-da=".menu__list, 1236.98, 2">
+										<a href="#" data-goto=".for-who" class="submenu__link" data-goto-top="25">Для кого тест</a>
+									</li>
+									<li class="submenu__item" data-da=".menu__list, 1236.98, 3">
+										<a href="#" data-goto=".benefits" class="submenu__link" data-goto-top="25">Переваги тесту</a>
+									</li>
+									<li class="submenu__item" data-da=".menu__list, 1236.98, 4">
+										<a href="#" data-goto=".how-works" class="submenu__link" data-goto-top="25">Як працює тест</a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item menu__link-hide">
+								<div class="menu__link" data-goto-top="25"><span>Про мене</span>
+									<svg viewBox="0 0 360 360" xml:space="preserve">
+										<g id="SVGRepo_iconCarrier">
+											<path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z">
+											</path>
+										</g>
+									</svg>
+								</div>
+								<ul class="submenu">
+									<li class="submenu__item" data-da=".menu__list, 1236.98, 5">
+										<a href="#" data-goto=".about" class="submenu__link" data-goto-top="25">Моя експертність</a>
+									</li>
+									<li class="submenu__item" data-da=".menu__list, 1236.98, 6">
+										<a href="#" data-goto=".mission" class="submenu__link" data-goto-top="100">Моя місія</a>
+									</li>
+									<li class="submenu__item" data-da=".menu__list, 1236.98, 7">
+										<a href="#" data-goto=".why-me" class="submenu__link" data-goto-top="25">Мої переваги</a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu__item"><a href="#" data-goto=".testimonials" class="menu__link" data-goto-top="65">Відгуки</a></li>
+							<li class="menu__item"><a href="#" data-goto=".faq" class="menu__link" data-goto-top="65">Питання</a>
+							</li>
+							<li class="menu__item"><a href="#" data-goto=".action" class="menu__link" data-goto-top="65">Вартість</a>
+							</li>
+							<li class="menu__item"><a href="#" data-goto=".footer" class="menu__link" data-goto-top="25">Контакти</a>
+							</li>
+						</ul>
+						<a href="#" class="header__button button button--inverse text text--btn" data-goto=".price" data-goto-top="100"><span>Пройти
+								тест</span></a>
+					</nav>
+
+				</div>
 			</div>
-			<div class="rootpage__icons">
-				<a href="https://www.linkedin.com/in/andrii-yakovliev" class="rootpage__linkedin" target="_blank"><i class="fi fi-brands-linkedin"></i></a>
-				<a href="https://github.com/andreiyakovliev" class="rootpage__github" target="_blank"><i class="fi fi-brands-github"></i></a>
-				<a href="https://www.upwork.com/freelancers/~01a75a9a5d09ef15a6" class="rootpage__upwork" target="_blank"><i class="fa-brands fa-upwork"></i></a>
-				<a href="https://t.me/andreiyakovliev" class="rootpage__telegram" target="_blank"><i class="fi fi-brands-telegram"></i></a>
-				<a href="https://wa.me/380675849409" class="rootpage__whatsapp"><i class="fi fi-brands-whatsapp" target="_blank"></i></a>
+		</header>
+		<main class="page">
+			<section class="page__hero hero">
+				<div class="hero__container">
+					<div class="hero__polygon"></div>
+					<h1 class="hero__title hero__title title">Перший в Україні тест на визначення статусу податкового
+						резидентства.</h1>
+					<p class="hero__text hero__text text text--paragraph text--justify">Пройдіть персоналізований тест, щоб уникнути
+						подвійного оподаткування, штрафів та донарахувань у майбутньому.</p>
+
+					<a href="#" class="hero__button button button--inverse text text--btn" data-goto=".page__price" data-goto-top="100">
+						<span>Пройти тест</span>
+					</a>
+					<div class="hero__media hero__media" data-da=".hero__container,991.98, 3">
+						<img data-src="img/photo_and_images/05-removebg.webp" src="img/photo_and_images/05-removebg.webp" alt="Анна Голубовська, податковий консультант">
+					</div>
+				</div>
+			</section>
+			<section class="page__for-who for-who">
+				<div class="for-who__container">
+					<h2 class="card__title title title--block">Кому важливо пройти тест?</h2>
+					<div class="card__items">
+						<article class="card__item">
+							<div class="card__image"><span class="material-symbols-outlined">
+									computer
+								</span></div>
+							<p class="card__text text"><span>Фрілансерам та дистанційним працівникам</span>, які виконують замовлення
+								для іноземних
+								компаній і не прив’язані до одного місця
+								проживання.</p>
+						</article>
+						<article class="card__item">
+							<div class="card__image"><span class="material-symbols-outlined">
+									work
+								</span></div>
+							<p class="card__text text "><span>Бізнесменам та підприємцям</span>, які мають бізнес або інвестиції за
+								кордоном і
+								прагнуть оптимізувати свої податкові
+								зобов’язання.</p>
+						</article>
+						<article class="card__item">
+							<div class="card__image"><span class="material-symbols-outlined">
+									globe
+								</span></div>
+							<p class="card__text text"><span>Співробітникам міжнародних компаній</span>, які тимчасово чи довгостроково
+								працюють в
+								іншій країні.</p>
+						</article>
+						<article class="card__item">
+							<div class="card__image"><span class="material-symbols-outlined">
+									paid
+								</span></div>
+							<p class="card__text text"><span>Інвесторам</span>, які отримують доходи від іноземних активів, наприклад,
+								цінних
+								паперів, нерухомості чи стартапів.</p>
+						</article>
+						<article class="card__item">
+							<div class="card__image"><span class="material-symbols-outlined">
+									book
+								</span></div>
+							<p class="card__text text"><span>Студентам, стажерам та учасникам міжнародних програм обміну</span>, які
+								певний час
+								перебувають за кордоном.</p>
+						</article>
+						<article class="card__item">
+							<div class="card__image"><span class="material-symbols-outlined">
+									flight
+								</span></div>
+							<p class="card__text text"><span>Будь-кому, хто часто змінює місце проживання</span> і не впевнений у своєму
+								податковому
+								статусі.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__about about">
+				<div class="about__container">
+					<div class="about__block promo-section">
+						<div class="promo-section__content">
+							<h3 class="promo-section__title title title--block">Ваш експерт: Міжнародний юрист із 15-річним досвідом.
+							</h3>
+							<div class="promo-section__text text temporary-class text--justify">
+								<p>Я – <span>Голубовська Анна</span>, міжнародний юрист, експерт з понад 15-річним досвідом роботи у
+									сфері оподаткування.</p>
+								<p>Працюючи у
+									найбільших консалтингових компаніях України та світу, таких як PwC, Deloitte та інших я допомагала
+									клієнтам правильно
+									визначати їх податковий статус, вирішити комплексні юридичні питання та стратегувати їх міжнародні
+									операції.
+
+								<p>Завжди знаходжусь на стороні Клієнта і пропоную персоналізовані юридичні рішення для складних запитів.
+								</p>
+
+								<p>Є автором та розробником першого в Україні онлайн тесту для визначення статусу податкового
+									резидентства.</p>
+								<p>Зробила тест
+									доступним для більшості українців для того, щоб допомогти уникнути податкових донарахувань і штрафів у
+									майбутньому.</p>
+							</div>
+						</div>
+						<div class="promo-section__media">
+							<img data-src="img/photo_and_images/04.webp" src="img/photo_and_images/04.webp" alt="Anna Golubovska">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__mission mission">
+				<div class="mission__container">
+					<div class="mission__image">
+						<img data-src="img/mission/01.webp" src="img/mission/01.webp" alt="City">
+					</div>
+					<div class="mission__content">
+						<div class="mission__text">
+							<h4 class="mission__text-title title title--block">Моя місія</h4>
+							<p class="text text--paragraph">Допомогти українцям уникнути подвійного оподаткування та забезпечити
+								впевненість у фінансових справах</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__benefits benefits">
+				<div class="benefits__container">
+					<div class="benefits__block promo-section">
+						<div class="promo-section__content">
+							<h2 class="promo-section__title title title--block">Чому важливо визначити податкове резидентство?</h2>
+							<div class="promo-section__text text text--indent text--justify">
+								<p>Ваш податковий статус може суттєво впливати на ваші фінансові обов'язки та зобов'язання перед
+									податковими органами
+									різних країн. Багато українців живуть та працюють за кордоном, що робить питання визначення
+									податкового резидентства
+									критично важливим. Неправильне визначення статусу може призвести до подвійного оподаткування, штрафів
+									або навіть
+									позбавлення волі.
+								</p>
+								<p>
+									Наш тест дозволяє провести детальний аналіз вашої ситуації на основі міжнародних конвенцій про
+									уникнення подвійного
+									оподаткування та діючого податкового законодавства. Ви отримаєте чіткий висновок, що допоможе вам
+									уникнути податкових
+									ризиків та неприємностей у майбутньому.
+								</p>
+							</div>
+						</div>
+						<div class="promo-section__media">
+							<img data-src="img/photo_and_images/01.webp" src="img/photo_and_images/01.webp" alt="Анна Голубовська, податковий консультант">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__how-works how-works">
+				<div class="how-works__container">
+					<h2 class="card__title title title--block">Як працює тест?</h2>
+					<div class="card__items">
+						<article class="card__item">
+							<div class="card__title-article title title--card">1</div>
+							<h4 class="card__card-title title title--card">Збір данних</h4>
+							<p class="card__text text">Для проходження тесту ви заповнюєте спеціально розроблену анкету де надаєте
+								інформацію про ваші особисті обставини.
+								Важливо! Ваші персональні дані, такі як дата народження або податковий номер, не потрібні — тест можна
+								пройти абсолютно
+								анонімно.</p>
+						</article>
+						<article class="card__item">
+							<div class="card__title-article title title--card">2</div>
+							<h4 class="card__card-title title title--card">Аналіз фактичних обставин</h4>
+							<p class="card__text text ">На основі ваших відповідей я проведу детальний аналіз, враховуючи
+								міжнародні угоди про уникнення подвійного
+								оподаткування, актуальне законодавство та практичний досвід.</p>
+						</article>
+						<article class="card__item">
+							<div class="card__title-article title title--card">3</div>
+							<h4 class="card__card-title title title--card">Висновок</h4>
+							<p class="card__text text">Ви тримайте результат у вигляді короткого висновоку щодо вашого податкового
+								статусу на електронну пошту протягом 3-5
+								робочих днів або протягом 7-10 робочих днів, якщо ви замовили меморандум.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__why-me why-me">
+				<div class="why-me__container promo-section">
+
+
+					<div class="promo-section__content">
+						<h3 class="promo-section__title title title--block">Чому варто звернутись до мене?</h3>
+						<ul class="promo-section__text text text--justify">
+							<li>
+								<p><span>15 років міжнародного досвіду</span>: мій досвід у застосуванні міжнародних конвенцій про
+									уникнення подвійного оподаткування та аналіз судової практики
+									забезпечить вам максимально точний аналіз вашого статусу.</p>
+							</li>
+							<li>
+								<p><span>Індивідуальний підхід</span>: кожен клієнт отримує персоналізований короткий висновок на основі
+									його конкретних обставин.</p>
+							</li>
+							<li>
+								<p><span>Захист від подвійного оподаткування</span>: вірне визначення статусу податкового резидентства є
+									основою для подальшого податкового планування та допоможе вам
+									уникнути сплати податків у двох країнах одночасно.</p>
+							</li>
+							<!-- <li><p><span>Міжнародне право</span>: мій досвід у застосуванні міжнародних конвенцій про уникнення подвійного
+               оподаткування та аналіз
+               судової практики забезпечить вам максимально точний аналіз вашого статусу.</p></li> -->
+							<li>
+								<p><span>Цінова політика</span>: вартість подібної послуг зазвичай коштує в десятки разів більше. Я
+									вперше автоматизувала цей тест і тому змогла
+									поставити ціну, яка буде доступна для кожного українця. І так, тест за такою ціною доступний виключно
+									для
+									українців.</p>
+							</li>
+						</ul>
+					</div>
+					<div class="promo-section__media">
+						<img data-src="img/photo_and_images/03.webp" src="img/photo_and_images/03.webp" alt="Anna Golubovska">
+					</div>
+				</div>
+			</section>
+			<section class="page__testimonials testimonials color-inverse">
+				<div class="testimonials__container">
+					<h2 class="testimonials__title title title--block">Відгуки</h2>
+					<div class="testimonials__navigation">
+						<button type="button" class="testimonials-button-prev"><span class="material-symbols-outlined">
+								arrow_circle_left
+							</span></button>
+						<button type="button" class="testimonials-button-next">
+							<span class="material-symbols-outlined">
+								arrow_circle_right
+							</span>
+						</button>
+					</div>
+					<!-- Slider -->
+					<div class="testimonials__slider swiper">
+						<!-- Part of slide, that moved -->
+						<div class="testimonials__wrapper swiper-wrapper">
+							<!-- Slide -->
+							<div class="testimonials__slide swiper-slide">
+								<article class="testimonials__article text " aria-label="Відгук від Андрій, IT-спеціаліст">
+									<p class="testimonials__article-text text">"Я живу за кордоном, і питання податкового
+										резидентства
+										було для мене критичним. Отримана консультація була швидкою та
+										зрозумілою!"</p>
+									<div class="testimonials__article-author">
+										<figure class="testimonials__article-img">
+											<img data-src="img/testimonials/03.webp" src="img/testimonials/03.webp" alt="Андрій, IT-спеціаліст">
+										</figure>
+										<div class="testimonials__article-info">
+											<p class="testimonials__article-name">Андрій</p>
+											<p class="testimonials__article-position">IT-спеціаліст</p>
+										</div>
+									</div>
+								</article>
+
+							</div>
+							<div class="testimonials__slide swiper-slide">
+								<article class="testimonials__article text" aria-label="Відгук від Олени, найманий працівник іноземної компанії">
+									<p class="testimonials__article-text text">"Дякую за професійну допомогу! Тест допоміг
+										мені зрозуміти,
+										де я маю сплачувати податки, і врятував мене від
+										неприємностей із податковими органами."</p>
+									<div class="testimonials__article-author">
+										<figure class="testimonials__article-img">
+											<img data-src="img/testimonials/01.webp" src="img/testimonials/01.webp" alt="Олена, підприємець">
+										</figure>
+										<div class="testimonials__article-info">
+											<p class="testimonials__article-name">Олена</p>
+											<p class="testimonials__article-position">Найманий працівник іноземної компанії</p>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="testimonials__slide swiper-slide">
+								<article class="testimonials__article text " aria-label="Відгук від Сергій, підприємець">
+									<p class="testimonials__article-text text">"Живемо з родиною на дві країни. Анна
+										допомогла розібратися які податки, де і кому потрібно платити. Тепер все зрозуміло
+										та можна думати про розвиток бізнесу."</p>
+									<div class="testimonials__article-author">
+										<figure class="testimonials__article-img">
+											<img data-src="img/testimonials/02.webp" src="img/testimonials/02.webp" alt="Сергій, підприємець">
+										</figure>
+										<div class="testimonials__article-info">
+											<p class="testimonials__article-name">Сергій</p>
+											<p class="testimonials__article-position">підприємець</p>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__faq faq color-inverse">
+				<div class="faq__container">
+					<h2 class="faq__title title title--block">Часті запитання</h2>
+					<div data-spollers data-one-spoller class="faq__spollers">
+						<details class="faq__spollers-item" aria-labelledby="faq-question-1">
+							<summary id="faq-question-1" class="faq__spollers-title  text text--paragraph">
+								Що таке податкове резидентство?
+							</summary>
+							<p class="faq__spollers-body text text--justify">Податкове резидентство визначає, в якій країні ви повинні
+								сплачувати
+								податки, залежно від вашого місця проживання,
+								роботи та інших факторів.</p>
+						</details>
+						<!-- <details class="faq__spollers-item" aria-labelledby="faq-question-2">
+            <summary id="faq-question-2" class="faq__spollers-title  text text--paragraph">
+               Скільки часу займає отримання результату тесту?
+            </summary>
+            <p class="faq__spollers-body text text--justify">Після заповнення анкети ви отримаєте аналіз та коротний
+               висновок протягом 3-5 робочих днів. Підготовка меморандуму
+               займає 7-10 робочих днів.
+            </p>
+         </details> -->
+						<details class="faq__spollers-item" aria-labelledby="faq-question-3">
+							<summary id="faq-question-3" class="faq__spollers-title  text text--paragraph">
+								Чи можна уникнути подвійного оподаткування?
+							</summary>
+							<p class="faq__spollers-body text text--justify">Так, міжнародні конвенції про уникнення подвійного
+								оподаткування
+								регулюють це питання. Наш тест допоможе вам дізнатись,
+								чи застосовуються до вас такі правила.
+							</p>
+						</details>
+						<!-- <details class="faq__spollers-item" aria-labelledby="faq-question-4">
+            <summary id="faq-question-4" class="faq__spollers-title text text--paragraph">
+               Яка точність онлайн тесту?
+            </summary>
+            <p class="faq__spollers-body text text--justify">Грунтуючись на наданій інформаціі, нормах українського та
+               міжнародного законодавства буде наданий висновок, який з
+               вірогідністю приблизно 90% визначить ваш поточний статус податкового резидентства.
+            </p>
+         </details> -->
+						<details class="faq__spollers-item" aria-labelledby="faq-question-5">
+							<summary id="faq-question-5" class="faq__spollers-title  text text--paragraph">
+								Чим відрізняється меморандум від короткого висновку отриманого на електронну адресу?
+							</summary>
+							<div class="faq__spollers-body text text--justify">
+								<p>Висновок на електронну адресу містить коротке заключення
+									щодо вашого податкового статусу у вигляді електронного листа.</p>
+								<p class="faq__spollers-body text text--justify"><span>Меморандум</span> - це окремий документ, який
+									включає
+									детальний опис вашої ситуації, висновок з посиланнями на норми
+									українського та міжнародного законодавства, аналіз релевантних податкових консультацій та судової
+									практики. Меморандум
+									та його норми в подальшому можна використовувати у суді для захисту своєї позиції.
+								</p>
+							</div>
+						</details>
+						<details class="faq__spollers-item" aria-labelledby="faq-question-6">
+							<summary id="faq-question-6" class="faq__spollers-title  text text--paragraph">
+								Чому надається така велика знижка на вартість послуги?
+							</summary>
+							<div class="faq__spollers-body text text--justify">
+								<p>Я перша автоматизувала процедуру визначення статусу податкового резидентства, тим самим суттєво
+									скоротивши свій час на
+									обробку та збір даних. Це дозволило мені сформувати ціну, яка доступна для кожного українця.</p>
+								<p>Вбачаю в цьому свою місію і мету - захист громадян від можливих донарахувань та подвійного
+									оподаткування.
+								</p>
+								<p>І так, ця пропозиція діє лише для українців.
+								</p>
+							</div>
+						</details>
+					</div>
+				</div>
+			</section>
+			<section class="page__action action">
+				<div class="action__container">
+					<div class="action__block promo-section">
+						<div class="promo-section__content">
+							<h2 class="action__title promo-section__title title">Не відкладайте, дізнайтесь свій податковий статус вже
+								зараз!</h2>
+						</div>
+						<div class="promo-section__media">
+							<img data-src="img/action/01.webp" src="img/action/01.webp" alt="Анна Голубовська, податковий консультант">
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="page__price price">
+				<div class="price__container">
+					<h3 class="price__title title title--block">Вартість</h3>
+					<div class="price__cards">
+						<article class="price__card">
+							<h3 class="price__price-card-title title title--card">Онлайн тест
+							</h3>
+							<div class="price__text title title--card"><span>EUR 690</span></div>
+							<div class="price__text title title--block">EUR 99</div>
+							<ul class="price__feature text">
+								<li>Аналіз ваших індивідуальних обставин</li>
+								<li>Аналіз відповідного міжнародного законодавства</li>
+								<li>Короткий висновок щодо статусу вашого податкового резидентства</li>
+							</ul>
+							<a href="https://secure.wayforpay.com/button/bf9ae47bacc14" class="price__button button text text--btn" target="_blank">
+								<span>Пройти тест</span>
+							</a>
+						</article>
+						<article class="price__card">
+							<h3 class="price__price-card-title title title--card">Онлайн тест + особиста консультація</h3>
+							<div class="price__text title title--card"><span>EUR 890</span></div>
+							<div class="price__text title title--block">EUR 149</div>
+							<ul class="price__feature text">
+								<li>Аналіз ваших індивідуальних обставин</li>
+								<li>Аналіз відповідного міжнародного законодавства</li>
+								<li>Короткий висновок щодо статусу вашого податкового резидентства</li>
+								<li>Індивідуальна 30-ти хвилинна консультація з Анною за результатами тесту</li>
+							</ul>
+							<a href="https://secure.wayforpay.com/button/beca8f3e84119" class="price__button button text text--btn" target="_blank">
+								<span>Пройти тест</span>
+							</a>
+						</article>
+						<article class="price__card">
+							<h3 class="price__price-card-title title title--card">Онлайн тест + особиста консультація + юридичний
+								меморандум</h3>
+							<div class="price__text title title--card"><span>EUR 3790</span></div>
+							<div class="price__text title title--block">EUR 469</div>
+							<ul class="price__feature text">
+								<li>Аналіз ваших індивідуальних обставин</li>
+								<li>Аналіз відповідного міжнародного законодавства</li>
+								<li>Короткий висновок щодо статусу вашого податкового резидентства</li>
+								<li>Індивідуальна 30-ти хвилинна консультація з Анною за результатами тесту</li>
+								<li>Написання юридичного меморандуму, який буде включати:</li>
+								<ul>
+									<li>Опис ваших фактичних обставин</li>
+									<li>Посилання на положення українського та міжнародного законодавства</li>
+									<li>Аналіз релевантних консультацій від податкових органів</li>
+									<li>Аналіз відповідної судової практики</li>
+									<li>Можливість подальшого застосування меморандуму та його положень у судових справах та при
+										спілкуванні з податковими
+										органами</li>
+								</ul>
+							</ul>
+							<a href="https://secure.wayforpay.com/button/b78295381f963" class="price__button button text text--btn" target="_blank">
+								<span>Пройти тест</span>
+							</a>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer text text--footer">
+			<div class="footer__container">
+				<div class="footer__content">
+					<a href="#" class="footer__logo logo">TaxTest</a>
+					<div class="footer__social">
+						<a href="https://www.instagram.com/annataxsolutions" class="footer__social-item"><i class="fi fi-brands-instagram"></i></a>
+						<a href="https://www.linkedin.com/in/anna-golubovska-b38998272/" class="footer__social-item"><i class="fi fi-brands-linkedin"></i></a>
+						<a href="https://www.facebook.com/anna.golubovska.3" class="footer__social-item"><i class="fi fi-brands-facebook"></i></a>
+					</div>
+					<div class="footer__">Copyright © 2024</div>
+					<a href="https://andreiyakovliev.github.io/portfolio/" class="footer__menu-text" target="_blank">
+						<p>Designed & built by &lt; Andrii Yakovliev /&gt; © 2024</p>
+					</a>
+				</div>
+				<div class="footer__menu">
+					<p class="footer__title text text--header">Меню</p>
+					<nav class="footer__menu-body menu__body">
+						<ul class="footer__menu-list menu__list">
+							<li class="footer__menu-item menu__item ">
+								<a href="#" class="footer__menu-link menu__link" data-goto=".hero">Головна</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".for-who" class="submenu__link" data-goto-top="25">Для кого тест</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".benefits" class="submenu__link" data-goto-top="25">Переваги тесту</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".how-works" class="submenu__link" data-goto-top="25">Як працює тест</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".about" class="submenu__link" data-goto-top="25">Моя експертність</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".mission" class="submenu__link" data-goto-top="100">Моя місія</a>
+							</li>
+
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".why-me" class="submenu__link" data-goto-top="25">Мої переваги</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".testimonials" class="menu__link" data-goto-top="65">Відгуки</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".faq" class="menu__link" data-goto-top="65">Питання</a>
+							</li>
+							<li class="footer__menu-item menu__item ">
+								<a href="#" data-goto=".action" class="menu__link" data-goto-top="65">Вартість</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer__contacts" data-da=".footer__content, 572.98, 1">
+					<p class="footer__title text text--header">Контакти</p>
+					<ul class="footer__contact-items">
+						<li class="footer__contact-item ">
+							<a href="offer.html" target="_blank">
+								Договір публічної оферти
+							</a>
+						</li>
+						<li class="footer__contact-item ">
+							<a href="mailto:anna@golubovska.com" target="_blank">
+								<span>Email:</span> anna@golubovska.com
+							</a>
+						</li>
+						<!-- <li class="footer__contact-item ">
+					<address>
+						<span>Адреса:</span> м. Київ, Україна
+					</address>
+				</li> -->
+					</ul>
+				</div>
 			</div>
-		</div>
-		<div class="rootpage__content">
-			<h1>Верстка «Landing Page Anna Golubovska»</h1>
-			<div class="rootpage__info">
-				Створення односторінкового сайту з підключенням платіжних систем та використанням HTML, CSS, JavaScript, API
-				згідно затвержденного технічного завдання.
-			</div>
-			<h2>Готові сторінки:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html">Landing Page</a></li>
-				</li>
-				<li><a target="_blank" href="offer.html">Договір публічної оферти</a></li>
-				</li>
-				<li><a target="_blank" href="payment.html">Сторінка помилки оплати</a></li>
-			</ol>
-			<h2>Стандартні блоки:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="сomponents.html">Компоненти (текст і карточки)</a></li>
-			</ol>
-			<h2>Дизайн:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="colors.html">Кольорова палітра</a></li>
-				<li><a href="src\assets\Landing Page Anna Golubovska-design.pdf" download="Design_Prototype.pdf">Прототип
-						дизайну(pdf)</a>
-				</li>
-			</ol>
-			<h2>Підключені вікна:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="https://secure.wayforpay.com/button/bae4f7d3bf7f0">Вікно WayForPay</a></li>
-			</ol>
-			<div class="rootpage__contacts">
-				<h2>Мої контакти:</h2>
-				<p>Пошта: <a href="mailto:andrii.yakovliev.frontend@gmail.com">andrii.yakovliev.frontend@gmail.com</a></p>
-				<p>Телефон: <a href="tel:+380675849409">+380 67 584 94 09</a></p>
-			</div>
-		</div>
+		</footer>
+		<a href="#" class="page__button" data-goto=".hero" id="page-button"><span class="material-symbols-outlined">
+				keyboard_arrow_up
+			</span></a>
 	</div>
+
+	<script src="js/app.min.js?_v=20241104223901"></script>
+
 </body>
-
-<style>
-	@charset "UTF-8";
-	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-
-
-	*,
-	*::before,
-	*::after {
-		padding: 0px;
-		margin: 0px;
-		border: 0px;
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-
-		color: #fff;
-		background-color: #fff;
-		/* margin: 0 auto; */
-		border: 1px solid #000;
-	}
-
-	body {
-		font-family: Montserrat;
-		font-size: 100%;
-		line-height: 1;
-		font-size: 1rem;
-	}
-
-	a {
-		text-decoration: inherit;
-		color: #fff;
-	}
-
-	a:visited {
-		text-decoration: inherit;
-		color: #fff;
-	}
-
-	a:hover {
-		color: #FFD700;
-	}
-
-	ul li {
-		list-style: none;
-	}
-
-	img {
-		vertical-align: top;
-	}
-
-	.wrapper {
-		min-width: 360px;
-		max-width: 1440px;
-		width: 100%;
-		overflow: hidden;
-	}
-
-	.rootpage {
-		display: flex;
-		max-width: 1440px;
-		margin: 0 auto;
-	}
-
-	.rootpage__content,
-	.rootpage__slidebar {
-		padding: 10px;
-		flex-grow: 1;
-	}
-
-	.rootpage__slidebar {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		background-color: #fff;
-		flex: 0 0 54px;
-	}
-
-	.rootpage__content {
-		position: relative;
-
-		background-color: #588bad;
-		min-width: 256px;
-		padding: 15px;
-		min-height: 100vh;
-
-	}
-
-	@media (max-width: 360px) {
-		.rootpage__content {
-			padding: 5px;
-			font-size: 0.9rem;
-			/* Можна зменшити шрифт для кращого відображення */
-		}
-	}
-
-
-	.rootpage__icons {
-		display: flex;
-		flex-direction: column;
-		background-color: #fff;
-		gap: 1rem;
-	}
-
-	.rootpage__icons i:hover {
-
-		color: #FFD700;
-	}
-
-	.fi {
-		text-decoration: none;
-		color: #588bad;
-		font-size: 1.5rem;
-	}
-
-	.fi:visited {
-		text-decoration: none;
-	}
-
-	.fa-brands {
-		color: #588bad;
-	}
-
-	.fa-upwork {}
-
-
-
-	h1 {
-		color: #fff;
-		font-size: 2.5rem;
-		margin: 0px 0px 1.25rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h1 {
-			font-size: 1.5rem;
-			margin: 0px 0px 1.25rem 0px;
-		}
-	}
-
-	h2 {
-		/* padding: 0.9375rem; */
-		color: #fff;
-		font-size: 1.25rem;
-		margin: 0px 0px 1rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h2 {
-			font-size: 1.125rem;
-			margin: 0px 0px 1rem 0px;
-		}
-	}
-
-	.rootpage__logo {
-		position: absolute;
-		bottom: 65%;
-		left: -131%;
-		rotate: -90deg;
-		transform: translate(-50%, -50%);
-
-
-		img {
-			color: #588bad;
-			height: 24px;
-			display: inline-block;
-
-			width: 217px;
-		}
-	}
-
-	.rootpage__info {
-		line-height: 140%;
-		margin: 0px 0px 1.5rem 0px;
-	}
-
-	.rootpage__list {
-		margin: 0px 0px 2.25rem 1.25rem;
-	}
-
-	.rootpage__list li:not(:last-child) {
-		margin: 0px 0px 15px 0px;
-	}
-
-	.rootpage__contacts,
-	.rootpage__tnx {
-		/* border-radius: 200px;
-		/* padding: 20px 65px; */
-		line-height: 140%;
-	}
-
-	@media (max-width: 767px) {
-
-		.rootpage__contacts,
-		.rootpage__tnx {
-			/* border-radius: 40px;
-			padding: 20px; */
-		}
-	}
-
-	.rootpage__contacts {
-		/* background: #32b5a4; */
-
-	}
-
-	.rootpage__contacts a {
-		color: #fff;
-	}
-
-	.rootpage__contacts a:hover {
-		color: #FFD700;
-	}
-
-
-	.rootpage__tnx {
-		background: #c22d63;
-		margin: 0px 0px 1rem 0px;
-	}
-</style>
 
 </html>
