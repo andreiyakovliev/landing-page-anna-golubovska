@@ -142,6 +142,68 @@ body {
   min-width: 0;
   grid-column: 3/4
 }
+.form__error {
+  color: red
+}
+input[type=email],
+input[type=tel],
+input[type=text],
+textarea {
+  -webkit-appearance: none;
+  appearance: none
+}
+.input {
+  border-radius: 3.125rem!important;
+  min-width: 18.75rem;
+  width: auto;
+  display: block;
+  padding: 10px 20px;
+  border: 1px solid #252932;
+  caret-color: inherit
+}
+.input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+  color: #252932;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  text-align: center;
+  opacity: .5
+}
+.input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+  color: #252932;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s;
+  text-align: center;
+  opacity: .5
+}
+.input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+  color: #252932;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s;
+  text-align: center;
+  opacity: .5
+}
+.input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+  color: #252932;
+  transition: opacity .3s;
+  text-align: center;
+  opacity: .5
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-webkit-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus:-ms-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-ms-input-placeholder {
+  opacity: 0
+}
+.input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+  opacity: 0
+}
+textarea.input {
+  resize: none;
+  padding: 0 0
+}
 .menu {
   color: var(--text-accent);
   background-color: var(--primary);
@@ -265,6 +327,112 @@ body {
 }
 .icon-menu {
   display: none
+}
+body::after {
+  content: "";
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .8s ease 0s;
+  pointer-events: none;
+  z-index: 149
+}
+.popup-show body::after {
+  opacity: 1
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility .8s ease 0s;
+  visibility: hidden;
+  pointer-events: none
+}
+.popup__close svg {
+  stroke: #252932
+}
+.popup_show {
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto
+}
+.popup_show .popup__content {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1)
+}
+.popup__wrapper {
+  flex-direction: column;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.popup__content {
+  visibility: hidden;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: -webkit-transform .3s ease 0s;
+  transition: transform .3s ease 0s;
+  transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
+  box-sizing: border-box;
+  box-shadow: inset 5px 5px 4px 0 hsla(0,0%,100%,.08),inset -5px -5px 4px 0 hsla(0,0%,100%,.04);
+  backdrop-filter: blur(20px);
+  background: linear-gradient(135deg,rgba(255,255,255,.3) 0,rgba(255,255,255,0) 100%);
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px
+}
+.lock .popup__content {
+  visibility: visible
+}
+.popup__form {
+  padding: 1rem;
+  display: grid;
+  place-items: center
+}
+.popup__title {
+  text-align: center
+}
+.popup__title:not(:last-child) {
+  margin-bottom: 1rem
+}
+.popup__text {
+  text-align: center
+}
+.popup__text:not(:last-child) {
+  margin-bottom: 1rem
+}
+.popup__action {
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  grid-template-rows: repeat(2,auto);
+  gap: 1rem;
+  text-align: center
+}
+.popup__checbox {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2,auto);
+  align-items: center;
+  gap: .625rem
+}
+.popup__error {
+  color: red
+}
+.popup__link {
+  text-decoration: underline
 }
 .faq__spollers {
   display: grid;
@@ -447,6 +615,7 @@ body {
   flex-shrink: 0;
   transition: background-color .3s ease;
   z-index: 2;
+  width: auto;
   font-weight: 700;
   line-height: 1;
   letter-spacing: .5px
@@ -897,12 +1066,19 @@ body {
   gap: 1rem;
   text-align: center
 }
+.offer li::before {
+  content: "•";
+  margin-right: 10px
+}
 .offer__container {
   margin-top: 80px;
   margin-bottom: 80px
 }
 .offer__title:not(:last-child) {
   margin-bottom: 2.5rem
+}
+.offer__description span {
+  font-weight: 700
 }
 .offer__description:not(:last-child) {
   margin-bottom: 1.875rem
@@ -941,6 +1117,33 @@ body {
   display: none!important
 }
 @media (min-width:85em) {
+  .form__error {
+    font-size: 1rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+    font-size: 1rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+    font-size: 1rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+    font-size: 1rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+    font-size: 1rem
+  }
+  .popup__form {
+    gap: 2.1875rem
+  }
+  .popup__checbox {
+    font-size: 1rem
+  }
+  .popup__error {
+    font-size: 1rem
+  }
+  .popup__link {
+    font-size: 1rem
+  }
   .title {
     font-size: 4.5rem
   }
@@ -1222,6 +1425,9 @@ body {
   .menu__body {
     min-width: 40%
   }
+  .popup__action {
+    grid-template-columns: auto
+  }
   .promo-section__media img {
     max-width: 100%
   }
@@ -1283,6 +1489,33 @@ body {
   }
 }
 @media (max-width:22.5em) {
+  .form__error {
+    font-size: .75rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+    font-size: .75rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+    font-size: .75rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+    font-size: .75rem
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+    font-size: .75rem
+  }
+  .popup__form {
+    gap: .9375rem
+  }
+  .popup__checbox {
+    font-size: .75rem
+  }
+  .popup__error {
+    font-size: .75rem
+  }
+  .popup__link {
+    font-size: .75rem
+  }
   .title {
     font-size: 2.5rem
   }
@@ -1399,6 +1632,33 @@ body {
   }
 }
 @media (min-width:22.5em)and (max-width:85em) {
+  .form__error {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
+  .input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
+  .input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
+  .popup__form {
+    gap: clamp(.9375rem ,.4875rem + 2vw ,2.1875rem)
+  }
+  .popup__checbox {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
+  .popup__error {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
+  .popup__link {
+    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
+  }
   .title {
     font-size: clamp(2.5rem ,1.78rem + 3.2vw ,4.5rem)
   }
