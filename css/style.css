@@ -328,114 +328,6 @@ textarea.input {
 .icon-menu {
   display: none
 }
-body::after {
-  content: "";
-  background-color: rgba(0,0,0,.5);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity .8s ease 0s;
-  pointer-events: none;
-  z-index: 149
-}
-.popup-show body::after {
-  opacity: 1
-}
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  padding: 30px 10px;
-  transition: visibility .8s ease 0s;
-  visibility: hidden;
-  pointer-events: none
-}
-.popup__close svg {
-  stroke: #252932
-}
-.popup_show {
-  z-index: 150;
-  visibility: visible;
-  overflow: auto;
-  pointer-events: auto
-}
-.popup_show .popup__content {
-  visibility: visible;
-  -webkit-transform: scale(1);
-  transform: scale(1)
-}
-.popup__wrapper {
-  flex-direction: column;
-  min-height: 100%;
-  flex: 1 1 auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-.popup__content {
-  visibility: hidden;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  transition: -webkit-transform .3s ease 0s;
-  transition: transform .3s ease 0s;
-  transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
-  box-sizing: border-box;
-  box-shadow: inset 5px 5px 4px 0 hsla(0,0%,100%,.08),inset -5px -5px 4px 0 hsla(0,0%,100%,.04);
-  backdrop-filter: blur(20px);
-  background: linear-gradient(135deg,rgba(255,255,255,.3) 0,rgba(255,255,255,0) 100%);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  padding: 20px;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 20px
-}
-.lock .popup__content {
-  visibility: visible
-}
-.popup__form {
-  padding: 1rem;
-  display: grid;
-  place-items: center
-}
-.popup__title {
-  text-align: center
-}
-.popup__title:not(:last-child) {
-  margin-bottom: 1rem
-}
-.popup__text {
-  text-align: center
-}
-.popup__text:not(:last-child) {
-  margin-bottom: 1rem
-}
-.popup__action {
-  display: grid;
-  grid-template-columns: repeat(2,auto);
-  grid-template-rows: repeat(2,auto);
-  gap: 1rem;
-  text-align: center
-}
-.popup__checbox {
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(2,auto);
-  align-items: center;
-  gap: .625rem
-}
-.popup__error {
-  color: red
-}
-.popup__link {
-  text-decoration: underline
-}
 .faq__spollers {
   display: grid;
   row-gap: 2rem
@@ -1134,18 +1026,6 @@ body::after {
   .input[placeholder]:not([data-placeholder-nohiden])::placeholder {
     font-size: 1rem
   }
-  .popup__form {
-    gap: 2.1875rem
-  }
-  .popup__checbox {
-    font-size: 1rem
-  }
-  .popup__error {
-    font-size: 1rem
-  }
-  .popup__link {
-    font-size: 1rem
-  }
   .title {
     font-size: 4.5rem
   }
@@ -1427,9 +1307,6 @@ body::after {
   .menu__body {
     min-width: 40%
   }
-  .popup__action {
-    grid-template-columns: auto
-  }
   .promo-section__media img {
     max-width: 100%
   }
@@ -1504,18 +1381,6 @@ body::after {
     font-size: .75rem
   }
   .input[placeholder]:not([data-placeholder-nohiden])::placeholder {
-    font-size: .75rem
-  }
-  .popup__form {
-    gap: .9375rem
-  }
-  .popup__checbox {
-    font-size: .75rem
-  }
-  .popup__error {
-    font-size: .75rem
-  }
-  .popup__link {
     font-size: .75rem
   }
   .title {
@@ -1647,18 +1512,6 @@ body::after {
     font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
   }
   .input[placeholder]:not([data-placeholder-nohiden])::placeholder {
-    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
-  }
-  .popup__form {
-    gap: clamp(.9375rem ,.4875rem + 2vw ,2.1875rem)
-  }
-  .popup__checbox {
-    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
-  }
-  .popup__error {
-    font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
-  }
-  .popup__link {
     font-size: clamp(.75rem ,.66rem + .4vw ,1rem)
   }
   .title {
