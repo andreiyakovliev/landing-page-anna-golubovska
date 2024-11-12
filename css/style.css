@@ -389,6 +389,8 @@ body::after {
   box-shadow: inset 5px 5px 4px 0 hsla(0,0%,100%,.08),inset -5px -5px 4px 0 hsla(0,0%,100%,.04);
   backdrop-filter: blur(20px);
   background: linear-gradient(135deg,rgba(255,255,255,.3) 0,rgba(255,255,255,0) 100%);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   padding: 20px;
   width: 100%;
   max-width: 900px;
