@@ -1,0 +1,61 @@
+.mission {
+   // .mission__container
+
+   &__container {
+      position: relative;
+   }
+
+   // .mission__image
+
+   &__image {
+      img {
+         max-width: 100%;
+         min-height: 300px;
+         border-radius: 16px;
+         object-fit: cover;
+      }
+   }
+
+   // .massion__wrapper
+
+   &__content {
+      position: absolute;
+      top: 0;
+      right: 2.5rem;
+      left: 2.5rem;
+      background-color: var(--bg-accent);
+      opacity: 0.8;
+      width: calc(100% - 5rem);
+      height: 100%;
+      border-radius: 16px;
+   }
+
+   // .mission__content
+
+   &__text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      width: 100%;
+
+      @include adaptiveValue("padding-right", 200, 15);
+      @include adaptiveValue("padding-left", 200, 15);
+
+      p {
+         &:not(:last-child) {
+            margin-bottom: toRem(32);
+         }
+      }
+   }
+
+   // .mission__text-title
+
+   &__text-title {
+      &:not(:last-child) {
+         margin-bottom: toRem(32);
+      }
+   }
+}

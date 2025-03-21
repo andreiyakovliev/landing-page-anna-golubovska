@@ -1,0 +1,46 @@
+.offer {
+
+   li::before {
+      content: "•";
+      margin-right: 10px;
+   }
+
+   // .offer__container
+
+   &__container {
+      margin-top: 80px;
+      margin-bottom: 80px;
+   }
+
+   // .offer__title
+
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: toRem(40);
+      }
+   }
+
+   // .offer__description
+
+   &__description {
+      span {
+         font-weight: 700;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: toRem(30);
+      }
+   }
+
+   // .offer__text
+
+   &__text {
+
+
+
+
+      &:not(:last-child) {
+         margin-bottom: toRem(20);
+      }
+   }
+}

@@ -1,0 +1,38 @@
+.faq {
+   padding: toRem(40) 0;
+   background-color: var(--bg-secondary);
+
+   .gray-theme & {
+      color: var(--text-secondary);
+   }
+
+   // .faq__container
+
+   &__container {}
+
+   // .faq__title
+
+   &__title {
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 80, 32, 0, 1440, 375);
+
+      }
+   }
+
+   // .faq__spollers
+
+   &__spollers {}
+
+   // .faq__spollers-item
+
+   &__spollers-item {}
+
+   // .faq__spollers-title
+
+   &__spollers-title {}
+
+   // .faq__spollers-body
+
+   &__spollers-body {}
+}

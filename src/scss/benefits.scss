@@ -1,0 +1,15 @@
+.benefits {
+   background-color: var(--secondary);
+   color: var(--text-inverse);
+
+   // .benefits__container
+
+   &__container {
+      >* {
+         @include adaptiveValue("padding-top", 80, 48, 0, 1440, 375);
+         @include adaptiveValue("padding-bottom", 80, 48, 0, 1440, 375);
+      }
+   }
+
+   &__block {}
+}

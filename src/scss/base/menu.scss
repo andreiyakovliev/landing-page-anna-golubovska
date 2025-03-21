@@ -1,0 +1,290 @@
+.menu {
+	color: var(--text-accent);
+	background-color: var(--primary);
+
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width: toEm(1236.98)) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		padding: toRem(16);
+	}
+
+	// .menu__icon
+	&__icon {}
+
+	// .menu__body
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: toRem(12);
+		padding: toRem(24) 0;
+		width: 100%;
+
+		@media (max-width: toEm(1236.98)) {
+			flex-direction: column;
+			gap: toRem(32);
+
+			position: fixed;
+			width: 30%;
+			height: 100%;
+			right: -100%;
+			top: 0;
+			overflow: auto;
+			padding: toRem(24) toRem(15);
+			transition: left 0.3s;
+			backdrop-filter: blur(80px);
+			background: rgba(11, 13, 23, 1);
+
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: toRem(70);
+				right: -100%;
+				top: 0;
+				transition: left 0.3s;
+				z-index: 2;
+			}
+
+			.menu-open & {
+				right: 0;
+
+				&::before {
+					right: 0;
+				}
+			}
+		}
+
+		@media (max-width: $mobile) {
+			min-width: 40%;
+		}
+
+		@media (max-width: $mobileSmall) {
+			min-width: 60%;
+		}
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: toRem(24);
+
+
+		@media (max-width: toEm(1236.98)) {
+			flex-direction: column;
+			align-items: flex-start;
+			height: 100%;
+			gap: toRem(16);
+		}
+	}
+
+	// .menu__item
+	&__item {
+		position: relative;
+
+		&:hover {
+			.menu__link {}
+
+			.submenu {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+				pointer-events: auto;
+				border-top: transparent;
+				background-color: var(--primary);
+				text-align: left;
+				padding: toRem(10);
+			}
+		}
+
+		.submenu {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			top: 100%;
+			border-radius: 0 0 16px 16px;
+			left: 0;
+			overflow: hidden;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(-12px);
+			transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+			z-index: 1;
+			pointer-events: none;
+			list-style: none;
+
+
+
+		}
+	}
+
+	// .menu__link-hide
+
+	&__link-hide {
+		@media (max-width: toEm(1236.98)) {
+			display: none;
+		}
+	}
+
+	// .menu__link
+	&__link {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		border-radius: 16px;
+		transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+		cursor: pointer;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -12px;
+			border-bottom: 2px solid var(--text-accent);
+			transform: scaleX(0);
+			z-index: 1;
+			transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+
+		svg {
+			width: 14px;
+			height: 14px;
+			fill: var(--text-accent);
+			transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::after {
+					transform: scaleX(1);
+					transform-origin: right;
+				}
+
+				svg {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+
+		@media (max-width: $mobile) {}
+	}
+}
+
+// .submenu
+.submenu {
+
+	// .submenu__item
+	.submenu__item {
+		width: 100%;
+		transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+		white-space: nowrap;
+
+		&:last-child .submenu__link {
+			border-bottom: none;
+		}
+	}
+
+	// .submenu__link
+	.submenu__link {
+		display: block;
+		padding: 12px 0; // padding: 12px 24px;
+		width: 100%;
+		position: relative;
+		text-align: left;
+		transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			border-bottom: 2px solid var(--text-accent);
+			transform: scaleX(0);
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			transform-origin: left;
+			transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+
+		&:hover {
+
+			&::before {
+				transform: scaleX(1);
+				transform-origin: right;
+			}
+		}
+	}
+}
+
+//Burger Icon
+.icon-menu {
+	display: none;
+
+	@media (max-width: toRem(1236.98)) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+
+		@media (any-hover: none) {
+			cursor: default;
+		}
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #fff;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			top: calc(50% - toRem(1));
+		}
+
+		.menu-open & {
+			span {
+				width: 0;
+			}
+
+			&::before,
+			&::after {}
+
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

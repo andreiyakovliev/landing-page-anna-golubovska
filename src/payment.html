@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ua">
+@@include('html/_head.htm',{
+"title":"Помилка оплати"
+})
+
+<body>
+   <div class="wrapper">
+      <main class="page">
+         <section class="page__payment payment">
+            <div class="payment__container">
+               <h4 class="payment__title title title--block">Оплата не пройшла</h4>
+               <p class="payment__text text">Оберіть пакет і повторіть будь ласка</p>
+               <div class="payment__action">
+                  <a href="https://secure.wayforpay.com/button/bf9ae47bacc14" class="button text text--btn">EUR 99</a>
+                  <a href="https://secure.wayforpay.com/button/beca8f3e84119" class="button text text--btn">EUR 149</a>
+                  <a href="https://secure.wayforpay.com/button/b78295381f963" class="button text text--btn">EUR 469</a>
+               </div>
+               <a href="home.html" class="button text text--btn">На головну</a>
+            </div>
+         </section>
+      </main>
+   </div>
+   @@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+.wrapper {}
+
+.page {}
+
+.components {
+   // background-color: #588bad;
+   // .components__container
+
+   &__container {
+      margin-bottom: 40px;
+   }
+
+   // .components__title
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: toRem(30);
+      }
+   }
+
+   // .components__items
+   &__items {
+      &:not(:last-child) {
+         margin-bottom: toRem(30);
+      }
+   }
+
+   // .components__header
+
+   &__header {
+      &:not(:last-child) {
+         margin-bottom: toRem(15);
+      }
+   }
+}

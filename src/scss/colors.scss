@@ -1,0 +1,67 @@
+.page {}
+
+.colors {
+   // background-color: #588bad;
+   // .colors__container
+
+   &__container {
+      padding: toRem(40);
+   }
+
+   // .colors__header
+
+   &__header {
+      &:not(:last-child) {
+         margin-bottom: toRem(30);
+      }
+   }
+
+   // .colors__palette
+
+   &__palette {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: toRem(20);
+
+      img {
+         max-width: 100%;
+         border: 2px solid #000;
+      }
+   }
+
+   // .colors__beige
+
+   &__beige {}
+
+   // .colors__title
+
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: toRem(15);
+      }
+   }
+
+   // .colors__black
+
+   &__black {}
+
+   // .colors__blue
+
+   &__blue {}
+
+   // .colors__cream
+
+   &__cream {}
+
+   // .colors__gray
+
+   &__gray {}
+
+   // .colors__green
+
+   &__green {}
+
+   // .colors__white
+
+   &__white {}
+}

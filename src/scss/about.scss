@@ -1,0 +1,26 @@
+.about {
+   @include adaptiveValue("padding-top", 80, 48, 0, 1440, 375);
+   @include adaptiveValue("padding-bottom", 80, 48, 0, 1440, 375);
+
+   .promo-section {
+      flex-direction: row-reverse;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include adaptiveValue("gap", 80, 32);
+
+      &:nth-child(even) {
+         flex-direction: row-reverse;
+
+         @media (max-width:$tablet) {
+            flex-direction: column;
+         }
+      }
+
+      @media (max-width:$tablet) {
+         flex-direction: column;
+      }
+   }
+}

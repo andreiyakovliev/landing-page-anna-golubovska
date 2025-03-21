@@ -1,0 +1,12 @@
+.how-works {
+   background-color: var(--bg-secondary);
+
+   @include adaptiveValue("padding-top", 80, 48);
+   @include adaptiveValue("padding-bottom", 80, 48);
+
+   // .how-works__container
+
+   &__container {}
+
+
+}

@@ -1,0 +1,4 @@
+.why-me {
+   @include adaptiveValue("padding-top", 80, 48, 0, 1440, 375);
+   @include adaptiveValue("padding-bottom", 80, 48, 0, 1440, 375);
+}

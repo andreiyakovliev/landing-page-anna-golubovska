@@ -1,0 +1,19 @@
+.action {
+   padding: toRem(40) 0;
+   background-color: var(--secondary);
+   color: var(--text-inverse);
+
+   // .action__container
+
+   &__container {}
+
+   // .action__title
+
+   &__title {}
+
+   // .action__block
+
+   &__block {}
+
+
+}

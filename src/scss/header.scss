@@ -1,0 +1,29 @@
+.header {
+   z-index: 100;
+   background-color: var(--primary);
+   opacity: 0.8;
+   position: fixed;
+   width: 100%;
+   // .header__main
+
+   &__main {}
+
+
+   // .header__container
+
+   &__container {
+      position: relative;
+   }
+
+   // .header__menu
+
+   &__menu {}
+
+   // .header__logo
+
+   &__logo {}
+
+   // .header__button
+
+   &__button {}
+}

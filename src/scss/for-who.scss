@@ -1,0 +1,17 @@
+.for-who {
+   background-color: var(--secondary);
+
+   @include adaptiveValue("padding-top", 80, 48);
+   @include adaptiveValue("padding-bottom", 80, 48);
+
+   // .for-who__container
+
+   &__container {}
+
+   // card__items
+
+   .card__item {
+      background-color: var(--bg-secondary);
+   }
+
+}

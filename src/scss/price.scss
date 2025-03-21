@@ -1,0 +1,109 @@
+.price {
+   background-color: var(--bg-accent);
+   color: var(--text-accent);
+
+   // .price__container
+
+   &__container {
+      width: 100%;
+      @include adaptiveValue("padding-top", 80, 48);
+      @include adaptiveValue("padding-bottom", 80, 48);
+   }
+
+   // .price__cards
+
+   &__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: toRem(50);
+      width: 100%;
+      height: 100%;
+
+      &> :nth-child(3) {
+         grid-column: 1 / -1;
+      }
+
+      @media (max-width:$mobile) {
+         display: grid;
+         grid-template-columns: auto;
+      }
+   }
+
+   // .price__card
+
+   &__card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: toRem(40);
+      background-color: var(--bg-secondary);
+      border-radius: toRem(16);
+      color: var(--text-primary);
+      flex: 1;
+
+      .gray-theme & {
+         background-color: var(--bg-primary);
+      }
+   }
+
+   // .price__title
+
+   &__title {
+      text-align: center;
+
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 80, 32);
+      }
+   }
+
+   // .price__price-card-title
+
+   &__price-card-title {
+      text-align: center;
+
+
+      &:not(:last-child) {
+         margin-bottom: toRem(32);
+      }
+   }
+
+   // .price__text
+
+   &__text {
+      text-align: center;
+
+
+      &:not(:last-child) {
+         margin-bottom: toRem(32);
+      }
+   }
+
+   // .price__feature
+
+   &__feature {
+      align-self: flex-start;
+      flex-grow: 1;
+      width: 100%;
+
+      ul {
+         padding-left: toRem(16);
+
+         li::before {
+            content: '✓';
+            color: #008000;
+         }
+      }
+
+      li::before {
+         content: "✅";
+         margin-right: toRem(10);
+      }
+
+      &:not(:last-child) {
+         margin-bottom: toRem(16);
+      }
+   }
+}

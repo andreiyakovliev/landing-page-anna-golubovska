@@ -1,0 +1,117 @@
+.hero {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--secondary);
+   color: var(--text-accent);
+
+   // .hero__container
+
+   &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+
+      @include adaptiveValue("column-gap", 80, 32);
+      @include adaptiveValue("row-gap", 32, 8);
+      @include adaptiveValue("margin-top", 150, 96);
+      @include adaptiveValue("margin-bottom", 80, 48);
+
+      @media (max-width:$mobile) {
+         display: flex;
+         flex-direction: column;
+      }
+   }
+
+   // .hero__polygon 
+   &__polygon {
+      position: absolute;
+      top: -1%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--primary);
+      clip-path: polygon(0% 0%, 101% 0, 91% 94%, 0% 100%);
+      z-index: 1;
+   }
+
+   // .hero__content
+
+   &__content {
+      flex: 1 1 40%;
+      z-index: 1;
+      width: 100%;
+
+      @media (max-width:$tablet) {
+
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+   }
+
+   // .hero__title
+
+   &__title {
+      grid-column: span 2 / span 2;
+      z-index: 3;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 32, 16);
+      }
+   }
+
+   // .hero__text
+
+   &__text {
+      grid-row-start: 2;
+      z-index: 3;
+      align-self: center;
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 32, 16);
+      }
+   }
+
+   // .hero__subtitle
+
+   &__subtitle {
+
+
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 32, 16);
+      }
+   }
+
+   // .hero__button
+
+   &__button {
+      justify-self: center;
+      align-self: center;
+      grid-column-start: 1;
+      grid-row-start: 3;
+      display: inline-block;
+   }
+
+   // .hero__media
+
+   &__media {
+      grid-row: span 2 / span 2;
+      grid-column-start: 2;
+      grid-row-start: 2;
+
+      flex: 1 1 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      @include adaptiveValue("margin-bottom", 96, 16);
+
+      img {
+         max-width: 80%;
+         border-radius: 16px;
+      }
+   }
+}

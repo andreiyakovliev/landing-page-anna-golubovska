@@ -1,0 +1,114 @@
+// Базові стилі спойлерів
+// Сніппет (HTML): spoller
+
+// Блок зі спойлерами
+.faq__spollers {
+	display: grid;
+	row-gap: toRem(32);
+}
+
+// Спойлер
+.faq__spollers-item {}
+
+// Заголовок спойлера
+.faq__spollers-title {
+	width: 100%;
+	cursor: default;
+	text-align: left;
+	padding-right: toRem(40);
+	position: relative;
+	list-style: none;
+	border-top: 1px solid #e2e8f0;
+	color: var(--primary);
+
+	p {
+		max-width: 80%;
+	}
+
+	&::marker,
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+
+	._spoller-init & {
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			background-color: var(--primary);
+			height: 2px;
+			width: 15px;
+			transition: transform 0.5s ease 0s;
+		}
+
+		&::before {
+			transform: translate(-75%, -50%) rotate(40deg);
+		}
+
+		&::after {
+			transform: translate(0, -50%) rotate(-40deg);
+		}
+
+		&._spoller-active {
+			&::before {
+				transform: translateX(-75%) rotate(-40deg);
+			}
+
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+
+		._spoller-init & {
+			position: relative;
+			width: 100%;
+			text-align: left;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: toRem(12);
+				height: toRem(1);
+				transition: all 0.3s ease 0s;
+				width: toRem(16);
+				background-color: var(--primary);
+			}
+
+			&::before {
+				transform: rotate(40deg);
+				right: toRem(7);
+			}
+
+			&::after {
+				transform: rotate(-40deg);
+			}
+		}
+
+		&._spoller-active {
+			&::before {
+				transform: rotate(-40deg);
+			}
+
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+
+	}
+}
+
+// Контент спойлера
+.faq__spollers-body {
+	padding: toRem(16) 0;
+
+	span {
+		font-weight: 600;
+	}
+}

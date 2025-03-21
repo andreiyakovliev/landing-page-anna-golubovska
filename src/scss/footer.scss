@@ -1,0 +1,147 @@
+//====================================================================================================
+.footer {
+   background-color: var(--primary);
+   color: var(--text-accent);
+   position: relative;
+   padding: toRem(40) 0;
+   // .footer__container
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: toRem(15);
+
+      @media (max-width: toEm(572.98)) {
+         flex-direction: column;
+      }
+   }
+
+   // .footer__content
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media (max-width: toEm(572.98)) {
+         >*:not(:last-child) {
+            margin-bottom: toRem(27);
+         }
+      }
+   }
+
+   // .footer__logo
+
+   &__logo {}
+
+   // .footer__social
+
+   &__social {
+      display: flex;
+      align-items: center;
+      // gap: toRem(16);
+
+      @include adaptiveValue("gap", 32, 16);
+
+      @media (max-width: toEm(572.98)) {
+         &:not(:last-child) {
+            justify-content: space-between;
+         }
+      }
+
+   }
+
+   // .footer__social-item
+
+   &__social-item {
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: var(--text-accent-);
+         }
+      }
+   }
+
+   // .footer__text
+
+   &__text {}
+
+   //  .footer__title
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: toRem(24);
+      }
+
+      @media (max-width: toEm(1236.98)) {
+         display: none;
+      }
+   }
+
+   // .footer__menu
+
+   &__menu {}
+
+   // .footer__menu-body
+
+   &__menu-body {
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0;
+
+      @media (max-width: toEm(1236.98)) {
+         display: none;
+      }
+   }
+
+   // .footer__menu-list
+
+   &__menu-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, auto);
+      justify-items: flex-start;
+   }
+
+   // .footer__menu-item
+
+   &__menu-item {}
+
+   // .footer__menu-link
+
+   &__menu-link {}
+
+   // .footer__contacts
+
+   &__content,
+   &__contacts {
+      @include adaptiveValue("gap", 32, 16);
+   }
+
+   // .footer__contact-items
+
+   &__contact-items {}
+
+   // .footer__contact-item
+
+   &__contact-item {
+      &:not(:last-child) {
+         margin-bottom: toRem(27);
+      }
+
+      span {
+         font-weight: 700;
+      }
+   }
+}
+
+
+
+.fi-brands-instagram {}
+
+.fi-brands-facebook {}
+
+.fi-brands-telegram {}
+
+.fi-brands-whatsapp {}
+
+//====================================================================================================
