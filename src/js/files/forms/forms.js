@@ -89,19 +89,24 @@ export let formValidate = {
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
 			if (this.emailTest(formRequiredItem)) {
 				this.addError(formRequiredItem);
+				this.removeSuccess(formRequiredItem);
 				error++;
 			} else {
 				this.removeError(formRequiredItem);
+				this.addSuccess(formRequiredItem);
 			}
 		} else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
+			this.removeSuccess(formRequiredItem);
 			error++;
 		} else {
 			if (!formRequiredItem.value.trim()) {
 				this.addError(formRequiredItem);
+				this.removeSuccess(formRequiredItem);
 				error++;
 			} else {
 				this.removeError(formRequiredItem);
+				this.addSuccess(formRequiredItem);
 			}
 		}
 		return error;
@@ -121,6 +126,14 @@ export let formValidate = {
 		if (formRequiredItem.parentElement.querySelector('.form__error')) {
 			formRequiredItem.parentElement.removeChild(formRequiredItem.parentElement.querySelector('.form__error'));
 		}
+	},
+	addSuccess(formRequiredItem) {
+		formRequiredItem.classList.add('_form-success');
+		formRequiredItem.parentElement.classList.add('_form-success');
+	},
+	removeSuccess(formRequiredItem) {
+		formRequiredItem.classList.remove('_form-success');
+		formRequiredItem.parentElement.classList.remove('_form-success');
 	},
 	formClean(form) {
 		form.reset();
