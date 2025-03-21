@@ -8,32 +8,22 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
-
 .input {
-	border-radius: toRem(50) !important;
-	min-width: toRem(300);
-	width: auto;
+	border-radius: 0 !important;
+	width: 100%;
 	display: block;
-	padding: 10px 20px;
-	border: 1px solid #252932;
+	padding: 0px 20px;
+	border: 1px solid #eee;
 	caret-color: inherit;
-
-
-	&._form-focus {}
-
-	&._form-error {}
+	&._form-focus {
+	}
+	&._form-error {
+	}
 }
-
 .input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
-		color: #252932;
 		transition: opacity 0.3s;
-		text-align: center;
-		opacity: 0.5;
-
-		@include adaptiveValue("font-size", 16, 12);
 	}
-
 	&:focus::placeholder {
 		opacity: 0;
 	}

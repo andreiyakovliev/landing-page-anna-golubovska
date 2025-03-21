@@ -1,22 +1,19 @@
 //<FORM>
 // Сніппет (HTML):
 .form {
-	&__row {}
-
-	&__column {}
-
-	&__line {}
-
-	&__input {}
-
-	&__button {}
-
+	&__row {
+	}
+	&__column {
+	}
+	&__line {
+	}
+	&__input {
+	}
+	&__button {
+	}
 	&__error {
-		color: red;
-		@include adaptiveValue("font-size", 16, 12);
 	}
 }
-
 //</FORM>
 
 // <BUTTONS>
@@ -25,7 +22,7 @@
 
 // <INPUTS>
 // Сніппет (HTML): inp
-@import "input";
+// @import "input";
 
 // <CHECK>
 // Сніппет (HTML): chk

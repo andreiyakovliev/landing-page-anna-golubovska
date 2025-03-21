@@ -23,6 +23,7 @@
 		"@babel/cli": "latest",
 		"@babel/core": "latest",
 		"@babel/preset-react": "latest",
+		"@googlemaps/js-api-loader": "^1.16.8",
 		"@types/isotope-layout": "^3.0.9",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",
@@ -69,7 +70,7 @@
 		"postcss-preset-env": "latest",
 		"pug": "latest",
 		"pug-loader": "latest",
-		"sass": "latest",
+		"sass": "1.77.6",
 		"sass-loader": "latest",
 		"smooth-scroll": "latest",
 		"string-replace-loader": "latest",
@@ -88,12 +89,11 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"@tailwindcss/postcss": "^4.0.0",
 		"gulp-cheerio": "^1.0.0",
-		"intl-tel-input": "^24.6.0",
 		"isotope-layout": "^3.0.6",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-phone-input-2": "^2.15.1",
 		"simplebar": "latest"
 	}
 }

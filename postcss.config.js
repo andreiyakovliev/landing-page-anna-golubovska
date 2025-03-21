@@ -1,3 +1,3 @@
 export const plugins = {
-	tailwindcss: {}
+	"@tailwindcss/postcss": {},
 };

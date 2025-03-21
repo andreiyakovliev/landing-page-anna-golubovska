@@ -17,13 +17,14 @@ let cssImagesWebpLoader, htmlImagesWebpLoader;
 cssImagesWebpLoader = {
 	loader: 'string-replace-loader',
 	options: {
-		search: '.png|.jpeg|.jpg|.gif',
+		search: '\\.(png|jpeg|jpg|gif)(?=\\s|\\)|"|\'|$)',
 		replace: '.webp',
 		flags: 'ig'
 	}
 }
 htmlImagesWebpLoader = {
-	regex: '.png|.jpeg|.jpg|.gif', to: '.webp'
+	regex: '\\.(png|jpeg|jpg|gif)(?=\\s|\\)|"|\'|$)',
+	to: '.webp'
 }
 
 let pugPages = fs.readdirSync(srcFolder).filter(fileName => fileName.endsWith('.pug'))
