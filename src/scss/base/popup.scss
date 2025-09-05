@@ -2,60 +2,94 @@ body::after {
 	content: "";
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
-	width: 100%;
+	// width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	opacity: 0;
 	transition: opacity 0.8s ease 0s;
-	pointer-events: none;
+	pointer-events: auto;
 	z-index: 149;
 }
+
 .popup-show body::after {
 	opacity: 1;
 }
+
 .popup {
+	display: block;
 	position: fixed;
-	top: 0;
-	left: 0;
+	// top: 0;
+	// left: 0;
 	bottom: 0;
 	right: 0;
+	// width: 100%;
 	padding: 30px 10px;
 	transition: visibility 0.8s ease 0s;
 	visibility: hidden;
-	pointer-events: none;
+	pointer-events: auto;
+	z-index: 9999;
+	opacity: 0.8;
+	position: fixed;
 }
+
 .popup_show {
-	z-index: 150;
+	z-index: 9999;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
 }
+
 .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
 }
+
 .popup__wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	min-height: 100%;
 	flex: 1 1 auto;
-	width: 100%;
+	// width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 .popup__content {
 	visibility: hidden;
-	transform: scale(0);
+	// transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
-	width: 100%;
+	background-color: var(--primary);
+	// padding: 40px;
+	// width: auto;
 	max-width: 900px;
 	border-radius: 20px;
+	color: var(--secondary);
+	@include adaptiveValue("padding-left", 40, 15);
+	@include adaptiveValue("padding-right", 40, 15);
+	@include adaptiveValue("padding-top", 40, 15);
+	@include adaptiveValue("padding-bottom", 40, 15);
+
 	.lock & {
 		visibility: visible;
+	}
+
+	@media (max-width:$mobile) {
+		text-align: center;
+		// padding: 40px;
+	}
+}
+
+.popup__buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: toRem(15);
+
+	@media (max-width:$mobile) {
+		justify-content: center;
 	}
 }
