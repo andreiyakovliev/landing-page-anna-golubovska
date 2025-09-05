@@ -22,10 +22,10 @@ jobs:
           cache: 'npm'
 
       # 3️⃣ Встановлення залежностей і build
-      - name: Install dependencies & Build 🏗️
-        run: |
-          npm ci
-          node node_modules/gulp/bin/gulp.js build --build
+        - name: Install dependencies & Build 🏗️
+          run: |
+            npm ci
+            npm run build-ci
 
       # 4️⃣ Деплой на GitHub Pages
       - name: Deploy to GitHub Pages 🚀

@@ -10,6 +10,7 @@
 		"start": "npm i --legacy-peer-deps",
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
 		"build": "gulp build --build",
+		"build-ci": "node node_modules/gulp/bin/gulp.js build --build",
 		"sprite": "gulp sprite",
 		"fonts": "gulp fonts --rewrite",
 		"deploy": "gulp deployFTP --build",
