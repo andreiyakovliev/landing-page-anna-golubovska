@@ -1,23 +1,36 @@
-name: Build and deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
 
-      - name: Install and Build 🔧
+    steps:
+      # 1️⃣ Клон репозиторію
+      - name: Checkout repository 🛎️
+        uses: actions/checkout@v3
+
+      # 2️⃣ Встановлення Node.js
+      - name: Setup Node.js 🔧
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # 3️⃣ Встановлення залежностей і build
+      - name: Install dependencies & Build 🏗️
         run: |
           npm ci
-          npm run build
+          node node_modules/gulp/bin/gulp.js build --build
 
-      - name: Deploy 🚀
+      # 4️⃣ Деплой на GitHub Pages
+      - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: gh-pages
-          folder: dist
+          branch: gh-pages        # гілка, куди пушити
+          folder: dist            # папка з результатом gulp build
+          clean: true             # очищає старі файли перед деплоєм
