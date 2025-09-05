@@ -22,15 +22,15 @@ jobs:
           cache: 'npm'
 
       # 3️⃣ Встановлення залежностей і build
-        - name: Install dependencies & Build 🏗️
-          run: |
-            npm ci
-            npm run build-ci
+      - name: Install dependencies & Build 🏗️
+        run: |
+          npm ci
+          npm run build-ci
 
       # 4️⃣ Деплой на GitHub Pages
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: gh-pages        # гілка, куди пушити
-          folder: dist            # папка з результатом gulp build
-          clean: true             # очищає старі файли перед деплоєм
+          branch: gh-pages
+          folder: dist
+          clean: true
