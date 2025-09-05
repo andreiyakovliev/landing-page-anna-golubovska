@@ -3877,6 +3877,35 @@
         }));
     }
     hideButton();
+    const popup = document.querySelector("#popup");
+    const oneYear = 1e3 * 60 * 60 * 24 * 365;
+    function showPopup() {
+        popup.classList.add("popup_show");
+    }
+    function hidePopup() {
+        popup.classList.remove("popup_show");
+    }
+    function setConsent(status) {
+        const consent = {
+            status,
+            timestamp: Date.now()
+        };
+        localStorage.setItem("cookieConsent", JSON.stringify(consent));
+        if (typeof clarity === "function") clarity("consent", status === "accepted");
+        hidePopup();
+    }
+    window.addEventListener("load", (() => {
+        const stored = localStorage.getItem("cookieConsent");
+        let consent = null;
+        try {
+            consent = stored ? JSON.parse(stored) : null;
+        } catch (e) {
+            consent = null;
+        }
+        if (!consent || Date.now() - consent.timestamp > oneYear) showPopup(); else if (typeof clarity === "function") clarity("consent", consent.status === "accepted");
+    }));
+    document.querySelector("#acceptCookies").addEventListener("click", (() => setConsent("accepted")));
+    document.querySelector("#rejectCookies").addEventListener("click", (() => setConsent("rejected")));
     window["FLS"] = true;
     menuInit();
     spollers();

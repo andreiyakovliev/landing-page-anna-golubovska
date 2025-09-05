@@ -264,6 +264,75 @@ body {
 .icon-menu {
   display: none
 }
+body::after {
+  content: "";
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .8s ease 0s;
+  pointer-events: auto;
+  z-index: 149
+}
+.popup-show body::after {
+  opacity: 1
+}
+.popup {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility .8s ease 0s;
+  visibility: hidden;
+  pointer-events: auto;
+  z-index: 9999;
+  opacity: .8;
+  position: fixed
+}
+.popup_show {
+  z-index: 9999;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto
+}
+.popup_show .popup__content {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1)
+}
+.popup__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.popup__content {
+  visibility: hidden;
+  transition: -webkit-transform .3s ease 0s;
+  transition: transform .3s ease 0s;
+  transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
+  background-color: var(--primary);
+  max-width: 900px;
+  border-radius: 20px;
+  color: var(--secondary)
+}
+.lock .popup__content {
+  visibility: visible
+}
+.popup__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .9375rem
+}
 .faq__spollers {
   display: grid;
   row-gap: 2rem
@@ -947,6 +1016,18 @@ body {
   display: none!important
 }
 @media (min-width:85em) {
+  .popup__content {
+    padding-left: 2.5rem
+  }
+  .popup__content {
+    padding-right: 2.5rem
+  }
+  .popup__content {
+    padding-top: 2.5rem
+  }
+  .popup__content {
+    padding-bottom: 2.5rem
+  }
   .title {
     font-size: 4.5rem
   }
@@ -1230,6 +1311,12 @@ body {
   .menu__body {
     min-width: 40%
   }
+  .popup__content {
+    text-align: center
+  }
+  .popup__buttons {
+    justify-content: center
+  }
   .promo-section__media img {
     max-width: 100%
   }
@@ -1291,6 +1378,18 @@ body {
   }
 }
 @media (max-width:22.5em) {
+  .popup__content {
+    padding-left: .9375rem
+  }
+  .popup__content {
+    padding-right: .9375rem
+  }
+  .popup__content {
+    padding-top: .9375rem
+  }
+  .popup__content {
+    padding-bottom: .9375rem
+  }
   .title {
     font-size: 2.5rem
   }
@@ -1407,6 +1506,18 @@ body {
   }
 }
 @media (min-width:22.5em)and (max-width:85em) {
+  .popup__content {
+    padding-left: clamp(.9375rem ,.375rem + 2.5vw ,2.5rem)
+  }
+  .popup__content {
+    padding-right: clamp(.9375rem ,.375rem + 2.5vw ,2.5rem)
+  }
+  .popup__content {
+    padding-top: clamp(.9375rem ,.375rem + 2.5vw ,2.5rem)
+  }
+  .popup__content {
+    padding-bottom: clamp(.9375rem ,.375rem + 2.5vw ,2.5rem)
+  }
   .title {
     font-size: clamp(2.5rem ,1.78rem + 3.2vw ,4.5rem)
   }
