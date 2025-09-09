@@ -84,7 +84,7 @@ body::after {
 
 .popup__buttons {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
 	gap: toRem(15);
