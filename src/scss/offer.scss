@@ -8,6 +8,7 @@
    // .offer__container
 
    &__container {
+      padding: 20px;
       margin-top: 80px;
       margin-bottom: 80px;
    }
@@ -15,6 +16,7 @@
    // .offer__title
 
    &__title {
+
       &:not(:last-child) {
          margin-bottom: toRem(40);
       }
